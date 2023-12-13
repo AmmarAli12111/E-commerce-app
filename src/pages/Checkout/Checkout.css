@@ -1,0 +1,106 @@
+.check-out-section {
+  padding: 100px 0;
+  color: #fff;
+}
+.check-out-section h3 {
+  color: #fff;
+  letter-spacing: -0.02em;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+.check-out-section .billing-fields form label,
+.check-out-section .order-review label {
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+}
+.check-out-section .billing-fields form input,
+.check-out-section .order-review textarea {
+  vertical-align: top;
+  outline: 0;
+  caret-color: #ff5400;
+  color: #fff;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.05)
+  );
+}
+.check-out-section .order-review textarea {
+  resize: none;
+}
+.check-out-section .billing-fields form input::placeholder,
+.check-out-section .order-review textarea::placeholder {
+  color: #bcbcbc;
+}
+.check-out-section .order-review .about-table {
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.05)
+  );
+}
+.check-out-section table tr {
+  border-bottom: 1px solid #bcbcbc;
+}
+.check-out-section table tr th {
+  color: #fff;
+}
+.check-out-section table tr td,
+.check-out-section table tr th {
+  padding: 15px 0 15px 15px;
+  vertical-align: middle;
+}
+.check-out-section .checkout-payment .payment_methods li {
+  border-bottom: 1px solid #bcbcbc;
+}
+.check-out-section .checkout-payment .payment_methods .input-radio {
+  top: 18px;
+  outline: none;
+  cursor: pointer;
+}
+.check-out-section .checkout-payment .payment_methods label {
+  font-size: 18px;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+.check-out-section .checkout-payment .payment_methods .payment_method_cod p {
+  font-size: 14px;
+}
+.check-out-section
+  .checkout-payment
+  .payment_methods
+  .input-radio:not(:checked)
+  + label
+  + .payment_method_cod {
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.check-out-section
+  .checkout-payment
+  .input-radio:checked
+  + label
+  + .payment_method_cod {
+  transition: 0.5s;
+}
+.check-out-section .checkout-payment a {
+  background: #ff5400;
+  padding: 12px 0;
+  border: 1px solid transparent;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+.check-out-section .checkout-payment a:hover {
+  background-color: rgb(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  color: #fff;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid #6c6a6a;
+}

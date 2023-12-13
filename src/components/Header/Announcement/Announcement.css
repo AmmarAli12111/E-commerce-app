@@ -1,0 +1,24 @@
+.announce-bar a {
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+@media (max-width: 1100px) {
+  .announce-container {
+    display: none;
+  }
+}
+.announce-container {
+  padding: 10px 0px 5px 0;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.announce-container.hidden {
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+}

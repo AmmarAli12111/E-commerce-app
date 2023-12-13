@@ -1,0 +1,82 @@
+.support-section {
+  padding: 200px 0;
+  color: #fff;
+}
+.support-section::before {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  left: 150px;
+  box-shadow: 100px 100px 400px 150px #ff5400;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.support-section::after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  right: 350px;
+  box-shadow: 100px 100px 400px 150px #ff5400;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.support-section .container-xl {
+  z-index: 10;
+}
+.support-section .support-wrapper {
+  width: 600px;
+  max-width: 100%;
+  background: rgb(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+.support-section .hero {
+  width: 600px;
+  max-width: 100%;
+}
+.support-section .hero .hero-text {
+  color: #ff5400;
+}
+.support-section .hero .hero-search form {
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.05)
+  );
+  outline: none;
+  caret-color: #ff5400;
+}
+.support-section .hero .hero-search form input {
+  background-color: transparent;
+  font-size: 14px;
+  color: #fff;
+  outline: none;
+  caret-color: #ff5400;
+}
+.support-section .hero .hero-search form input::placeholder {
+  color: #bcbcbc;
+}
+.support-section .support-wrapper a:not(:last-of-type) {
+  border-bottom: 1px solid #6c6a6a;
+}
+.support-section .support-wrapper a {
+  color: #fff;
+}
+.support-section .support-wrapper a .icon-box {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid #6c6a6a;
+}

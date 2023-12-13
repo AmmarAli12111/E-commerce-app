@@ -1,0 +1,21 @@
+.emptyCart-section {
+  padding: 100px 0;
+  color: #fff;
+}
+.emptyCart-section a {
+  background-color: #ff5400;
+  border: 1px solid transparent !important;
+  padding: 15px 0;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.emptyCart-section a:hover {
+  background: rgb(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid #6c6a6a !important;
+}

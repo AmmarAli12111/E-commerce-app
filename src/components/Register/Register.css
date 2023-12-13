@@ -1,0 +1,33 @@
+.register-section {
+  color: #fff;
+}
+.register-section form {
+  width: 765px;
+  background: rgb(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+}
+.register-section input {
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.01)
+  );
+  padding: 17px 20px;
+  color: #fff;
+  outline: none;
+  caret-color: #ff5400;
+}
+.register-section label {
+  color: #fff;
+}
+.register-section input::placeholder {
+  font-size: 15px;
+  color: #fff;
+}
+.register-section form button {
+  padding: 14px 30px;
+  background-color: #ff5400;
+  color: #fff;
+}
