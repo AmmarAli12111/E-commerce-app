@@ -2,6 +2,7 @@ import {
   ADD_TO_CART,
   ADD_TO_WISHLIST,
   BUYING_PRODUCT,
+  CLEAR_CART,
   DECREASE_QY,
   QUANTITY_CHANGE,
   REMOVE_FROM_CART,
@@ -67,6 +68,12 @@ const reducer = (state = initialState, action) => {
         cart: action.payload,
       };
 
+    case CLEAR_CART:
+      return {
+        ...state,
+        cart: [],
+      };
+
     default:
       return state;
   }
@@ -94,6 +101,9 @@ export const middleware = (store) => (next) => (action) => {
 
     case BUYING_PRODUCT:
       return handleBuyingProduct(store, next, action);
+
+    case CLEAR_CART:
+      return clearCart(store, next, action);
 
     default:
       return next(action);
@@ -133,6 +143,14 @@ const handleAddToCart = (store, next, action) => {
 
   // Dispatch the modified action
   return next(modifiedAction);
+};
+
+const clearCart = (store, next, action) => {
+  const cart = store.getState().cart;
+
+  if (cart.length > 0) {
+    return next([]);
+  }
 };
 
 const handleAddToWishlist = (store, next, action) => {

@@ -89,6 +89,10 @@ const App = () => {
     dispatch(buyingProduct(product));
   };
 
+  const clearCart = () => {
+    dispatch(clearCart());
+  };
+
   const [genreFilter, setGenreFilter] = useState("");
   const [platformFilter, setPlatformFilter] = useState("");
   const [featureFilter, setFeatureFilter] = useState("");

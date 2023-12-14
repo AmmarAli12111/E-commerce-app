@@ -3,6 +3,7 @@ import "./Cart.css";
 import { useSelector } from "react-redux";
 import EmptyCart from "./EmptyCart/EmptyCart";
 import { Link } from "react-router-dom";
+import { clearCart } from "../../redux/actions/action";
 
 function Cart(props) {
   const cartItems = useSelector((state) => state.cart);
@@ -163,7 +164,10 @@ function FootCartItem() {
       <div className="right">
         <Link
           to="#"
-          onClick={(e) => e.preventDefault()}
+          onClick={(e) => {
+            e.preventDefault();
+            clearCart();
+          }}
           className="link-effect px-4 rounded-5  d-block fw-bold w-100"
         >
           <span className="inner-effect position-relative d-inline-block">

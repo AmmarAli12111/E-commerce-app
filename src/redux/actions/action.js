@@ -2,6 +2,7 @@ import {
   ADD_TO_CART,
   ADD_TO_WISHLIST,
   BUYING_PRODUCT,
+  CLEAR_CART,
   DECREASE_QY,
   QUANTITY_CHANGE,
   REMOVE_FROM_CART,
@@ -34,4 +35,8 @@ export const DecreaseQy = (product) => {
 
 export const quantityChange = (product, id, quantity) => {
   return { type: QUANTITY_CHANGE, payload: { product, id, quantity } };
+};
+
+export const clearCart = () => {
+  return { type: CLEAR_CART, payload: "" };
 };
