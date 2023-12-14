@@ -161,29 +161,6 @@ function FootCartItem() {
           </span>
         </Link>
       </div>
-      <div className="right">
-        <Link
-          to="#"
-          onClick={(e) => {
-            e.preventDefault();
-            clearCart();
-          }}
-          className="link-effect px-4 rounded-5  d-block fw-bold w-100"
-        >
-          <span className="inner-effect position-relative d-inline-block">
-            <span className="line position-absolute top-50"></span>
-            <span className="effect-l position-absolute">
-              <span className="d-inline-block">Clear shopping cart</span>
-            </span>
-            <span className="effect-r position-absolute top-50">
-              <span className="d-inline-block">Clear shopping cart</span>
-            </span>
-            <span className="effect-shade opacity-0">
-              <span>Clear shopping cart</span>
-            </span>
-          </span>
-        </Link>
-      </div>
     </div>
   );
 }

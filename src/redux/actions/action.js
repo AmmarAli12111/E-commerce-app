@@ -36,7 +36,3 @@ export const DecreaseQy = (product) => {
 export const quantityChange = (product, id, quantity) => {
   return { type: QUANTITY_CHANGE, payload: { product, id, quantity } };
 };
-
-export const clearCart = () => {
-  return { type: CLEAR_CART, payload: "" };
-};
