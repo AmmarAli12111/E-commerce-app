@@ -16030,6 +16030,11 @@ button.swiper-pagination-bullet {
     padding: 10px 20px;
   }
 }
+@media (max-width: 400px) {
+  .products-section .top-control .control .product-count {
+    display: none;
+  }
+}
 .products-section:not(.products-fullwidth) .product-filter {
   background: linear-gradient(
     120deg,
