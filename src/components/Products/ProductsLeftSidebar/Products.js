@@ -51,7 +51,6 @@ function Products(props) {
                     className="w-100 h-100"
                     src={item.image}
                     alt="Photo item"
-                    loading="lazy"
                   />
                 </Link>
                 <div className="product-info px-2 py-3">

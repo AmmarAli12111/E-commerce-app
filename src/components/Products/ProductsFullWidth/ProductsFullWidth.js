@@ -10,6 +10,31 @@ function ProductsFullWidth(props) {
   const topSidebar = useRef(null);
 
   const filterTitle = useRef(null);
+  const closeIcon = useRef(null);
+
+  const closeFilter = (e) => {
+    if (e.target.closest(".close_filter") === closeIcon.current) {
+      console.log("yes");
+      const filterFullwidthTitle = document.querySelector(
+        ".filter-fullwidth-title"
+      );
+      const productFilterFullwidth = document.querySelector(
+        ".filter-small-media"
+      );
+      const overlay = document.getElementById("overlay");
+      if (
+        filterFullwidthTitle &&
+        productFilterFullwidth &&
+        filterFullwidthTitle.classList.contains("active") &&
+        productFilterFullwidth.classList.contains("open") &&
+        overlay.classList.contains("open")
+      ) {
+        filterFullwidthTitle.classList.remove("active");
+        productFilterFullwidth.classList.remove("open");
+        overlay.classList.remove("open");
+      }
+    }
+  };
 
   useLayoutEffect(() => {
     const handleClicked = (event) => {
@@ -182,8 +207,15 @@ function ProductsFullWidth(props) {
             <div className="content-sidebar d-flex gap-3 px-3">{filters}</div>
           </div>
           <div className="sidebar-top filter-small-media">
-            <div className="filter-header fs-4 fw-bold mb-3 d-none position-absolute top-0 start-0 end-0 py-1 px-2">
-              Filter
+            <div className="headerFilter d-flex align-items-center justify-content-between position-absolute top-0 start-0 w-100">
+              <div className="filter-header fs-4 fw-bold flex-fill py-1 px-2">
+                Filters
+              </div>
+              <span
+                className="close_filter position-relative d-flex align-items-center justify-content-center pe-1"
+                ref={closeIcon}
+                onClick={closeFilter}
+              ></span>
             </div>
             <div className="content-sidebar-wrapper">
               <div className="content-sidebar d-flex gap-3 px-3">{filters}</div>

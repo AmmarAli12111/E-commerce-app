@@ -86,11 +86,49 @@
   padding: 8px 10px;
   height: fit-content;
 }
-@media (max-width: 991px) {
-  .products-section:not(.products-fullwidth) .product-filter .filter-header {
-    display: block !important;
-    background-color: #ff5400;
+.products-section:not(.products-fullwidth) .product-filter .close_filter {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.products-section:not(.products-fullwidth) .product-filter .close_filter::after,
+.products-section:not(.products-fullwidth)
+  .product-filter
+  .close_filter::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+.products-section:not(.products-fullwidth)
+  .product-filter
+  .close_filter::before {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+.products-section:not(.products-fullwidth) .product-filter .headerFilter {
+  background-color: #ff5400;
+}
+@media (min-width: 992px) {
+  .products-section:not(.products-fullwidth) .product-filter .headerFilter {
+    display: none !important;
   }
+}
+@media (max-width: 991px) {
   .products-section:not(.products-fullwidth) .product-filter {
     position: fixed;
     left: 0;
