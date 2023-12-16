@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useLayoutEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import "./LogoBar.css";
 import NavBar from "../NavBar/NavBar";
 import { Link } from "react-router-dom";
@@ -37,7 +37,7 @@ function LogoBar(props) {
     }
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleClicked = (e) => {
       let target = e.target;
       while (target !== null && target !== userIcon.current) {
@@ -54,7 +54,7 @@ function LogoBar(props) {
     };
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     // Define function to handle click events
     const handleClick = (event) => {
       let target = event.target;

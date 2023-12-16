@@ -1,9 +1,9 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import FeaturesFilter from "./Filters/FilterComponent";
 import Filters from "./Filters/Filters";
 
 function Sidebar(props) {
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleClicked = (event) => {
       if (event.target.classList.contains("name")) {
         const fliterCollapse = event.target.nextElementSibling;

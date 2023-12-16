@@ -1,9 +1,9 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 function Control(props) {
   const filterTitle = useRef(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const openFilters = (event) => {
       if (event.target.classList.contains("filter-title")) {
         event.target.classList.toggle("active");

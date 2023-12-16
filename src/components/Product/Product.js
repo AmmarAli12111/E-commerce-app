@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Product.css";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
@@ -14,7 +14,7 @@ function Product(props) {
 
   const locationPathname = useLocation().pathname;
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (locationPathname === "/SimpleProduct") {
       setLocation("simple");
     } else if (locationPathname === "/NewProduct") {
@@ -24,7 +24,7 @@ function Product(props) {
     }
   }, [locationPathname]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (product) {
       const findProduct = wishlist.findIndex((p) => p.id === product.id);
       if (findProduct !== -1) {

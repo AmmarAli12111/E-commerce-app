@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import { LinkItem } from "../NavBar/NavBar";
 import { dropdownLinks } from "../NavBar/dorpdownLinks";
 import "./NavMobile.css";
@@ -7,7 +7,7 @@ import { FiSearch } from "react-icons/fi";
 function NavMobile(props) {
   const ItemComp = [];
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const navMobileItems = document.querySelectorAll(".nav-mobile-item");
 
     const dropdownLinks = document.querySelectorAll(

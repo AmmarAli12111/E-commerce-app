@@ -1,13 +1,12 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import "./Cart.css";
 import { useSelector } from "react-redux";
 import EmptyCart from "./EmptyCart/EmptyCart";
 import { Link } from "react-router-dom";
-import { clearCart } from "../../redux/actions/action";
 
 function Cart(props) {
   const cartItems = useSelector((state) => state.cart);
-  useLayoutEffect(() => {
+  useEffect(() => {
     cartItems.forEach((item) => {
       const inputField = document.getElementById(`Quantity-${item.id}`);
       inputField.value = item.quantity;

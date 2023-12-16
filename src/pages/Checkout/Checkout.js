@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Checkout.css";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ function Checkout() {
   const [clickedInput, setClickedInput] = useState(null);
   const [prevChecked, setPrevChecked] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleLoading = () => {
       const elements = document.querySelectorAll(".input-radio:not(:checked)");
       if (elements) {
@@ -32,7 +32,7 @@ function Checkout() {
     };
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleClick = () => {
       if (clickedInput && clickedInput.classList.contains("input-radio")) {
         if (clickedInput.checked && prevChecked) {

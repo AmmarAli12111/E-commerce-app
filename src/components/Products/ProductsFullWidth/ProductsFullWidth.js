@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Products from "../ProductsLeftSidebar/Products";
 import "../Products.css";
 import "./ProductsFullWidth.css";
@@ -36,7 +36,7 @@ function ProductsFullWidth(props) {
     }
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleClicked = (event) => {
       if (event.target.classList.contains("filter-title-mobile")) {
         event.target.classList.toggle("active");
@@ -72,7 +72,7 @@ function ProductsFullWidth(props) {
     };
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleClicked = (event) => {
       if (event.target.classList.contains("name")) {
         const fliterCollapse = event.target.nextElementSibling;
@@ -108,7 +108,7 @@ function ProductsFullWidth(props) {
     };
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const openFilters = (event) => {
       const overlayFilter = document.getElementById("overlay");
       if (event.target.classList.contains("filter-fullwidth-title")) {
@@ -131,7 +131,7 @@ function ProductsFullWidth(props) {
     };
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const removeOverlay = (e) => {
       if (e.target.classList.contains("open")) {
         e.target.classList.remove("open");

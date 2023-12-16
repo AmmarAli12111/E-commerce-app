@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "../Products.css";
 import Sidebar from "../ProductsLeftSidebar/Sidebar";
 import Products from "./Products";
@@ -30,7 +30,7 @@ function ProductsLeftSidebar(props) {
     }
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const removeOverlay = (e) => {
       if (e.target.classList.contains("open")) {
         e.target.classList.remove("open");

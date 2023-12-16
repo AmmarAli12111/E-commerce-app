@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./FeaturedSection.css";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -18,7 +18,7 @@ function FeaturedSection(props) {
 
   const wishlistItems = useSelector((state) => state.wishlist);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleWheel = (e) => {
       if (e.deltaX !== 0) {
         e.preventDefault();
@@ -40,7 +40,7 @@ function FeaturedSection(props) {
     };
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const productItem = document.querySelector(".featured-item");
     if (productItem) {
       const maxScrollLeft =

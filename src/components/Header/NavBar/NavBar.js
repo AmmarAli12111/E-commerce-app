@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import "./NavBar.css";
 import { dropdownLinks } from "./dorpdownLinks";
 import { Link } from "react-router-dom";
@@ -19,7 +19,7 @@ function Navigation(props) {
     body.classList.remove("active");
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let timeoutIds = new Map();
 
     const handleMouseEnter = (event) => {

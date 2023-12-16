@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import "./MiniCart.css";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
@@ -25,7 +25,7 @@ function MiniCart(props) {
     }
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const removeOverlay = (e) => {
       if (e.target.classList.contains("open")) {
         e.target.classList.remove("open");
@@ -119,7 +119,7 @@ function MiniCart(props) {
 function ProductMinicart(props) {
   const cartItems = useSelector((state) => state.cart);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     cartItems.forEach((item) => {
       const inputField = document.getElementById(`wbQuantity-${item.id}`);
       inputField.value = item.quantity;

@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import "../Product/Product.css";
@@ -11,7 +11,7 @@ function ProductDetails(props) {
   const wishlist = useSelector((state) => state.wishlist);
   const [isProductInWishlist, setIsProductInWishlist] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (product) {
       const findProduct = wishlist.findIndex((p) => p.id === product.id);
       setIsProductInWishlist(findProduct !== -1);
