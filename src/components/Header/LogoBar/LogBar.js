@@ -38,7 +38,7 @@ function LogoBar(props) {
   };
 
   useEffect(() => {
-    const handleClicked = (e) => {
+    const ClickOnUserIcon = (e) => {
       let target = e.target;
       while (target !== null && target !== userIcon.current) {
         target = target.parentNode;
@@ -48,15 +48,15 @@ function LogoBar(props) {
         userIcon.current.nextElementSibling.classList.toggle("open");
       }
     };
-    userIcon.current.addEventListener("click", handleClicked);
+    userIcon.current.addEventListener("click", ClickOnUserIcon);
     return () => {
-      userIcon.current.removeEventListener("click", handleClicked);
+      userIcon.current.removeEventListener("click", ClickOnUserIcon);
     };
   }, []);
 
   useEffect(() => {
     // Define function to handle click events
-    const handleClick = (event) => {
+    const handleClickDOM = (event) => {
       let target = event.target;
       while (target !== null && target !== cartIcon.current) {
         target = target.parentNode;
@@ -89,12 +89,12 @@ function LogoBar(props) {
       }
     };
 
-    // Add click event listener to the document with the handleClick function
-    document.addEventListener("click", handleClick);
+    // Add click event listener to the document with the handleClickDOM function
+    document.addEventListener("click", handleClickDOM);
 
     // Remove click event listener when the component unmounts
     return () => {
-      document.removeEventListener("click", handleClick);
+      document.removeEventListener("click", handleClickDOM);
     };
   }, []);
   return (

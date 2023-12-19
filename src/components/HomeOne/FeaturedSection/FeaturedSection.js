@@ -57,7 +57,7 @@ function FeaturedSection(props) {
     }
   }, [windowWidth]);
 
-  const handleClickedRight = (e) => {
+  const ClickedOnRightArrow = (e) => {
     const productItem = elementRef.current.querySelector(".featured-item");
     const productItemWidth = productItem.getBoundingClientRect().width;
     const maxScrollLeft =
@@ -79,7 +79,7 @@ function FeaturedSection(props) {
     }
   };
 
-  const handleClickedLeft = (e) => {
+  const ClickOnLeftArrow = (e) => {
     const productItem = elementRef.current.querySelector(".featured-item");
     const productItemWidth = productItem.getBoundingClientRect().width;
 
@@ -242,12 +242,12 @@ function FeaturedSection(props) {
           <div
             className="arrow-back position-absolute top-50 rounded-5 d-flex align-items-center justify-content-center opacity-0"
             id="left"
-            onClick={handleClickedLeft}
+            onClick={ClickOnLeftArrow}
           ></div>
           <div
             className="arrow-forward position-absolute top-50 rounded-5 d-flex align-items-center justify-content-center opacity-0"
             id="right"
-            onClick={handleClickedRight}
+            onClick={ClickedOnRightArrow}
           ></div>
         </div>
       </div>

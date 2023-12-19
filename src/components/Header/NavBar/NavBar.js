@@ -8,7 +8,7 @@ import { FiSearch } from "react-icons/fi";
 
 function Navigation(props) {
   const body = document.querySelector("body");
-  const handleClick = () => {
+  const openSearchInput = () => {
     body.classList.add("active");
     document
       .querySelector(".navigation:not(.nav-mobile .navigation) .search-input")
@@ -106,7 +106,7 @@ function Navigation(props) {
       <ul className="navigation position-relative d-flex align-items-center justify-content-end list-unstyled  p-0 mb-0 ">
         <li className="position-absolute start-0 h-100 d-inline-block">
           <div
-            onClick={handleClick}
+            onClick={openSearchInput}
             className="position-absolute start-0 top-0 d-flex align-items-center justify-content-center rounded-5 h-100 fs-3"
           >
             <FiSearch />

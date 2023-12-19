@@ -33,7 +33,7 @@ function Checkout() {
   }, []);
 
   useEffect(() => {
-    const handleClick = () => {
+    const selectCheckbox = () => {
       if (clickedInput && clickedInput.classList.contains("input-radio")) {
         if (clickedInput.checked && prevChecked) {
           return; // Stop if input was already checked
@@ -89,14 +89,14 @@ function Checkout() {
       }
     };
 
-    document.addEventListener("click", handleClick);
+    document.addEventListener("click", selectCheckbox);
 
     return () => {
-      document.removeEventListener("click", handleClick);
+      document.removeEventListener("click", selectCheckbox);
     };
   }, [clickedInput, prevChecked]);
 
-  const handleMouseDown = (event) => {
+  const handleMouseDownCheckbox = (event) => {
     if (event.target.classList.contains("input-radio")) {
       if (clickedInput !== event.target) {
         setPrevChecked(event.target.checked);
@@ -246,7 +246,10 @@ function Checkout() {
                   </tfoot>
                 </table>
                 <div className="checkout-payment">
-                  <ul className="payment_methods" onMouseDown={handleMouseDown}>
+                  <ul
+                    className="payment_methods"
+                    onMouseDown={handleMouseDownCheckbox}
+                  >
                     <li className="position-relative py-3 px-4">
                       <input
                         type="radio"

@@ -4,7 +4,7 @@ import Filters from "./Filters/Filters";
 
 function Sidebar(props) {
   useEffect(() => {
-    const handleClicked = (event) => {
+    const openFilterSection = (event) => {
       if (event.target.classList.contains("name")) {
         const fliterCollapse = event.target.nextElementSibling;
         const filterBody = fliterCollapse.querySelector(".filter-body");
@@ -32,10 +32,10 @@ function Sidebar(props) {
       }
     };
 
-    document.addEventListener("click", handleClicked);
+    document.addEventListener("click", openFilterSection);
 
     return () => {
-      document.removeEventListener("click", handleClicked);
+      document.removeEventListener("click", openFilterSection);
     };
   }, []);
 
