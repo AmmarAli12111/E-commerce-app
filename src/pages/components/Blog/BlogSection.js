@@ -1,7 +1,7 @@
 import React from "react";
 import "./BlogSection.css";
 import SideBarBlog from "./SidebarBlog/SidebarBlog";
-import { BlogItem } from "../HomeOne/BlogSection/Blog";
+import { BlogItem } from "../../../components/HomeOne/BlogSection/Blog";
 import { useLocation } from "react-router";
 
 function BlogSection(props) {
