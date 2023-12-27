@@ -1,0 +1,234 @@
+// import mixins
+
+@use "../../../sass/helpers/mixins" as *;
+
+.cart-section {
+  padding: 100px 0;
+  color: #fff;
+  .shopping-cart {
+    border-top: 1px solid #bcbcbc;
+    .cart-item {
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.01)
+      );
+      @include box-shadow(5px 5px 30px rgba(0, 0, 0, 0.2));
+      @media screen and (max-width: 576px) {
+        .about-item {
+          flex-direction: column;
+        }
+        .content-item {
+          flex-direction: column;
+        }
+      }
+      .image-box {
+        img {
+          width: 130px;
+          object-fit: cover;
+          object-position: center;
+          @media screen and (max-width: 576px) {
+            width: 100%;
+          }
+        }
+      }
+      .info-item {
+        .product-name {
+          @media screen and (max-width: 576px) {
+            flex-direction: column;
+          }
+          a {
+            width: 220px;
+          }
+          .product-option {
+            font-size: 13px;
+          }
+          span {
+            &:first-of-type {
+              color: #bcbcbc;
+            }
+          }
+          .curr-price {
+            font-size: 18px;
+            color: #ff5400;
+          }
+          .old-price {
+            color: #bcbcbc;
+          }
+        }
+      }
+      .right-area {
+        @media screen and (max-width: 576px) {
+          flex-direction: row !important;
+        }
+        .delete-item {
+          width: 15px;
+          height: 11px;
+          cursor: pointer;
+          &::before,
+          ::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            @include border-radius(5px);
+            @include transition(0.4s);
+            @include transform(rotate(45deg));
+          }
+          &::after {
+            @include transform(rotate(-45deg));
+          }
+          &:hover::before,
+          ::after {
+            @include transform(rotate(0));
+          }
+        }
+        .total {
+          color: #ff5400;
+          font-size: 20px;
+        }
+      }
+    }
+    .quantity {
+      .quantity-form {
+        background: linear-gradient(
+          153.32deg,
+          rgba(255, 255, 255, 0.3) -65.62%,
+          rgba(255, 255, 255, 0.1) 83.28%
+        );
+        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
+        @include box-shadow(0px 4px 24px -1px rgba(0, 0, 0, 0.2));
+        input {
+          outline: none;
+          width: 45px;
+          background: rgba(0, 0, 0, 0);
+          color: #fff;
+        }
+        .minus,
+        .plus {
+          cursor: pointer;
+          color: #fff;
+          width: 2rem;
+          outline: none;
+          background-color: transparent;
+          color: #ff5400;
+        }
+      }
+    }
+  }
+  .main-cart-footer {
+    .cart-note {
+      textarea {
+        min-height: 100px;
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0.18),
+          rgba(255, 255, 255, 0.05)
+        );
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        color: #fff;
+        height: 145px;
+        resize: none;
+        outline: none;
+        caret-color: #ff5400;
+        &::placeholder {
+          font-size: 15px;
+          color: #bcbcbc;
+        }
+      }
+    }
+    .cart-total {
+      background: rgb(255, 255, 255, 0.1);
+      -webkit-backdrop-filter: blur(25px);
+      backdrop-filter: blur(25px);
+      @include box-shadow(5px 5px 30px rgba(0, 0, 0, 0.2));
+      .coupon-form {
+        border-top: 1px solid #bcbcbc;
+        input {
+          width: 80%;
+          background: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0.18),
+            rgba(255, 255, 255, 0.05)
+          );
+          outline: none;
+          padding: 7px 10px;
+          caret-color: #ff5400;
+          color: #fff;
+          &::placeholder {
+            color: #fff;
+          }
+        }
+        a {
+          background: #ff5400;
+          color: #fff;
+          padding: 7px 10px;
+          border: 1px solid transparent !important;
+          &:hover {
+            background: rgb(0, 0, 0, 0.4);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid #6c6a6a !important;
+          }
+        }
+      }
+      .info-checkout {
+        border-top: 1px solid #bcbcbc;
+      }
+      .cart__shipping_note {
+        border-top: 1px solid #bcbcbc;
+      }
+      .group-button {
+        a {
+          background: #ff5400;
+          color: #fff;
+          cursor: pointer;
+          font-size: 13px;
+          padding: 15px 0;
+          border: 1px solid transparent !important;
+          &:hover {
+            background: rgb(0, 0, 0, 0.4);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            @include box-shadow(10px 10px 20px rgba(0, 0, 0, 0.2));
+            border: 1px solid #6c6a6a !important;
+          }
+        }
+      }
+    }
+  }
+  .main-cart-items {
+    .foot-area {
+      @media (max-width: 567px) {
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .left {
+        @media (max-width: 567px) {
+          width: 100%;
+        }
+        a {
+          background-color: #ff5400;
+          padding: 12px 0;
+          border: 1px solid transparent !important;
+          @include transition(0.5s);
+          @media (max-width: 567px) {
+            width: 100%;
+            text-align: center;
+          }
+          &:hover {
+            background: rgb(0, 0, 0, 0.1);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            @include box-shadow(10px 10px 20px rgba(0, 0, 0, 0.2));
+            border: 1px solid #6c6a6a !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+// import mixns
+
+@use "../../../sass/helpers/mixins" as *;
+
+.contact-us-section {
+  color: #fff;
+  .contact-wrapper {
+    @media screen and (max-width: 767px) {
+      flex-wrap: wrap;
+    }
+  }
+  .contact-info {
+    width: 290px;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      text-align: start;
+    }
+    h3 {
+      color: #ff5400;
+    }
+    .contact-details {
+      .icon-box {
+        width: 50px;
+        height: 50px;
+        color: #ffffff;
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0.18),
+          rgba(255, 255, 255, 0.05)
+        );
+      }
+      li {
+        &:not(:first-of-type) {
+          margin-top: 20px;
+        }
+      }
+      .right {
+        span {
+          color: #bcbcbc;
+          font-size: 14px;
+        }
+        h4 {
+          color: #ffffff;
+        }
+      }
+    }
+    .social-links {
+      li {
+        a {
+          width: 60px;
+          height: 60px;
+          background: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0.18),
+            rgba(255, 255, 255, 0.05)
+          );
+          svg {
+            font-size: 23px;
+            color: #fff;
+            @include transition(0.4s);
+          }
+          &:hover {
+            svg {
+              color: #ff5400;
+            }
+          }
+        }
+      }
+    }
+  }
+  .form {
+    max-width: 765px;
+    form {
+      background: rgb(255, 255, 255, 0.1);
+      backdrop-filter: blur(25px);
+      @include box-shadow(5px 5px 30px rgba(0, 0, 0, 0.2));
+      @media screen and (max-width: 767px) {
+        padding: 55px 20px 30px;
+      }
+      h1 {
+        span {
+          color: #ff5400;
+        }
+      }
+      input,
+      textarea {
+        vertical-align: top;
+        outline: 0;
+        caret-color: #ff5400;
+        color: #fff;
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0.18),
+          rgba(255, 255, 255, 0.05)
+        );
+        &::placeholder {
+          color: #bcbcbc;
+        }
+      }
+      textarea {
+        resize: none;
+      }
+      a {
+        vertical-align: top;
+        background-color: #ff5400;
+        color: #fff;
+        border: 1px solid transparent !important;
+        &:hover {
+          background: rgb(0, 0, 0, 0.4);
+          -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+          border: 1px solid #6c6a6a !important;
+          @include box-shadow(10px 10px 20px rgba(0, 0, 0, 0.2));
+        }
+      }
+    }
+  }
+}

@@ -56,6 +56,7 @@ module.exports = (env, argv) => {
             },
             ,
             "css-loader",
+            "sass-loader",
           ],
         },
 

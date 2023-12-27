@@ -1,0 +1,125 @@
+.check-out-section {
+  padding: 100px 0;
+  color: #fff;
+  h3 {
+    color: #fff;
+    letter-spacing: -0.02em;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+  }
+  .billing-fields {
+    form {
+      label {
+        color: #fff;
+        font-size: 14px;
+        letter-spacing: -0.02em;
+      }
+      input {
+        vertical-align: top;
+        outline: 0;
+        caret-color: #ff5400;
+        color: #fff;
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0.18),
+          rgba(255, 255, 255, 0.05)
+        );
+        &::placeholder {
+          color: #bcbcbc;
+        }
+      }
+    }
+  }
+  .order-review {
+    label {
+      color: #fff;
+      font-size: 14px;
+      letter-spacing: -0.02em;
+    }
+    textarea {
+      vertical-align: top;
+      outline: 0;
+      caret-color: #ff5400;
+      color: #fff;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.18),
+        rgba(255, 255, 255, 0.05)
+      );
+      resize: none;
+      &::placeholder {
+        color: #bcbcbc;
+      }
+    }
+    .about-table {
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.18),
+        rgba(255, 255, 255, 0.05)
+      );
+    }
+  }
+  table {
+    tr {
+      border-bottom: 1px solid #bcbcbc;
+      th {
+        color: #fff;
+      }
+      th,
+      td {
+        padding: 15px 0 15px 15px;
+        vertical-align: middle;
+      }
+    }
+  }
+  .checkout-payment {
+    .payment_methods {
+      li {
+        border-bottom: 1px solid #bcbcbc;
+      }
+      .input-radio {
+        top: 18px;
+        outline: none;
+        cursor: pointer;
+      }
+      label {
+        font-size: 18px;
+        letter-spacing: 0;
+        cursor: pointer;
+      }
+      .payment_method_cod {
+        p {
+          font-size: 14px;
+        }
+      }
+      .input-radio:not(:checked) + {
+        label + {
+          .payment_method_cod {
+            overflow: hidden;
+            @include transition(0.5s);
+          }
+        }
+      }
+      .input-radio:checked + {
+        label + {
+          .payment_method_cod {
+            @include transition(0.5s);
+          }
+        }
+      }
+    }
+    a {
+      background: #ff5400;
+      padding: 12px 0;
+      border: 1px solid transparent;
+      @include transition(0.4s);
+      &:hover {
+        background-color: rgb(0, 0, 0, 0.3);
+        backdrop-filter: blur(15px);
+        color: #fff;
+        border: 1px solid #6c6a6a;
+        @include box-shadow(10px 10px 20px rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+}

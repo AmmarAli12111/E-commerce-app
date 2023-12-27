@@ -1,0 +1,165 @@
+// import mixins
+
+@use "./sass/helpers/mixins" as *;
+
+* {
+  vertical-align: baseline;
+  box-sizing: border-box;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #efefef;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #ff5400;
+    @include border-radius(10px);
+  }
+}
+
+img,
+a {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+ul {
+  @include list-style;
+}
+a {
+  text-decoration: none !important;
+  color: #fff !important;
+  &:hover {
+    color: #fff !important;
+  }
+}
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #545454;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+@font-face {
+  font-family: "Marcellus";
+  src: url("./fonts/Marcellus-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+body {
+  position: relative;
+  margin: 0;
+  font-family: "Marcellus", serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: thin;
+  color: #fff !important;
+  line-height: 1.7;
+  overscroll-behavior: none;
+  background-color: #25282d !important;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.container-xl {
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;
+}
+
+#overlay {
+  @media (max-width: 991px) {
+    position: absolute;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include transition(0.5s);
+    &.open {
+      background: #161829;
+      visibility: visible;
+      opacity: 0.5;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  #overlay {
+    position: absolute;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include transition(0.5s);
+  }
+  #overlay.open {
+    background: #161829;
+    visibility: visible;
+    opacity: 0.5;
+  }
+}
+
+.link-effect {
+  & svg {
+    position: absolute;
+    display: block;
+    top: 35%;
+    left: 20px;
+    font-size: 18px;
+  }
+  & .inner-effect {
+    & .line {
+      right: -10px;
+      left: -10px;
+      height: 0.5px;
+      @include transform(rotate(-5deg));
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        background-color: #ffff;
+        transform-origin: 100% 0;
+        @include transition(0.2s transform);
+        @include transform(scaleX(0));
+      }
+    }
+    & .effect-l,
+    .effect-r {
+      overflow: hidden;
+      top: -50%;
+      @include transform(translateX(-1px) rotate(-5deg));
+      @include transition(0.2s transform);
+      & span {
+        @include transform(translateY(50%) rotate(5deg));
+      }
+    }
+    & .effect-r {
+      @include transform(translateX(1px) rotate(-5deg));
+      & span {
+        @include transform(translateY(-50%) rotate(5deg));
+      }
+    }
+  }
+  &:hover .inner-effect .line::before {
+    @include transform(scaleX(1));
+    transform-origin: 0 0;
+  }
+  &:hover .inner-effect .effect-l {
+    @include transform(translateX(-4px) rotate(-5deg));
+  }
+  &:hover .inner-effect .effect-r {
+    @include transform(translateX(4px) rotate(-5deg));
+  }
+}

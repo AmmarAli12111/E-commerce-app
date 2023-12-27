@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./NavBar.css";
+import "./NavBar.scss";
 import { dropdownLinks } from "./dorpdownLinks";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -7,16 +7,16 @@ import { BiSolidLeftArrowAlt } from "react-icons/bi";
 import { FiSearch } from "react-icons/fi";
 
 function Navigation(props) {
-  const body = document.querySelector("body");
+  const navigation = document.querySelector(".navigation");
   const openSearchInput = () => {
-    body.classList.add("active");
+    navigation.classList.add("openSearch");
     document
       .querySelector(".navigation:not(.nav-mobile .navigation) .search-input")
       .focus();
   };
 
   const handleClickCloseIcon = () => {
-    body.classList.remove("active");
+    navigation.classList.remove("openSearch");
   };
 
   useEffect(() => {

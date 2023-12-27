@@ -1,0 +1,80 @@
+// import mixins
+
+@use "../../../sass/helpers/mixins" as *;
+
+.support-section {
+  padding: 200px 0;
+  color: #fff;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    left: 150px;
+    @include box-shadow(100px 100px 400px 150px #ff5400);
+    @include border-radius(50%);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    right: 350px;
+    @include box-shadow(100px 100px 400px 150px #ff5400);
+    @include border-radius(50%);
+  }
+  .container-xl {
+    z-index: 10;
+  }
+  .support-wrapper {
+    width: 600px;
+    max-width: 100%;
+    background: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    @include box-shadow(5px 5px 30px rgba(0, 0, 0, 0.2));
+    a {
+      color: #fff;
+      &:not(:last-of-type) {
+        border-bottom: 1px solid #6c6a6a;
+      }
+      .icon-box {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.01)
+        );
+        border: 1px solid #6c6a6a;
+      }
+    }
+  }
+  .hero {
+    width: 600px;
+    max-width: 100%;
+    .hero-text {
+      color: #ff5400;
+    }
+    .hero-search {
+      form {
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0.18),
+          rgba(255, 255, 255, 0.05)
+        );
+        outline: none;
+        caret-color: #ff5400;
+        input {
+          background-color: transparent;
+          font-size: 14px;
+          color: #fff;
+          outline: none;
+          caret-color: #ff5400;
+          &::placeholder {
+            color: #bcbcbc;
+          }
+        }
+      }
+    }
+  }
+}

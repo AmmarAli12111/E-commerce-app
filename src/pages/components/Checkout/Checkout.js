@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Checkout.css";
+import "./Checkout.scss";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 

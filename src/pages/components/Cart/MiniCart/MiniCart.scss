@@ -1,0 +1,187 @@
+// import mixins
+
+@use "../../../../sass/helpers/mixins" as *;
+
+#cart-sidebar-wrapper {
+  z-index: 99999 !important;
+  visibility: hidden;
+  @include transition(0.5s);
+  height: 100vh;
+  width: 100%;
+  &.open {
+    visibility: visible;
+  }
+  .cart-sidebar {
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(
+      153.32deg,
+      rgba(255, 255, 255, 0.3) -65.62%,
+      rgba(255, 255, 255, 0.1) 83.28%
+    );
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    opacity: 0;
+
+    z-index: 1000;
+    @include box-shadow(0px 4px 24px -1px rgba(0, 0, 0, 0.2));
+    @include transition(0.5s);
+    @include transform(translateX(100%));
+    @media (max-width: 1500px) {
+      width: 40%;
+    }
+    @media (max-width: 1300px) {
+      width: 50%;
+    }
+    @media (max-width: 991px) {
+      width: 60%;
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+    &.act_opened {
+      @include transform(none);
+      opacity: 1;
+    }
+    .head-minicart {
+      background-color: #ff5400;
+      height: 40px;
+      .close_popup {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        &::before,
+        ::after {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 2px;
+          background-color: #fff;
+          @include border-radius(10px);
+          @include transform(rotate(-45deg));
+        }
+        &::after {
+          @include transform(rotate(45deg));
+        }
+      }
+    }
+    .cart-inner {
+      > a {
+        background-color: #ff5400;
+        border: 1px solid transparent !important;
+        @include transition(0.4s);
+        &:hover {
+          background: rgb(0, 0, 0, 0.4);
+          -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+          border: 1px solid #6c6a6a !important;
+          @include box-shadow(10px 10px 20px rgba(0, 0, 0, 0.2));
+        }
+      }
+      span {
+        svg {
+          font-size: 60px;
+        }
+      }
+      .group-button {
+        a {
+          &:first-of-type {
+            background-color: #ff5400;
+            border: 1px solid transparent !important;
+            @include transition(0.4s);
+            &:hover {
+              background: rgb(0, 0, 0, 0.4);
+              -webkit-backdrop-filter: blur(15px);
+              backdrop-filter: blur(15px);
+              border: 1px solid #6c6a6a !important;
+              @include box-shadow(10px 10px 20px rgba(0, 0, 0, 0.2));
+            }
+          }
+        }
+      }
+      > div {
+        > div {
+          overflow-y: auto;
+        }
+      }
+      .list-items {
+        overflow-y: auto;
+        max-height: 600px;
+        .product-item {
+          img {
+            max-width: 150px;
+          }
+          .delete-item {
+            width: 15px;
+            height: 10px;
+            margin-top: 1px;
+            &::before,
+            ::after {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 2px;
+              background-color: #fff;
+              @include border-radius(10px);
+              @include transform(rotate(-45deg));
+            }
+            &::after {
+              @include transform(rotate(45deg));
+            }
+          }
+          .info {
+            .product-name {
+              font-size: 14px;
+            }
+            .price {
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 19px;
+            }
+            .money {
+              color: #ff5400;
+            }
+            .quantity-item {
+              border: 1px solid #757575;
+              input {
+                background-color: transparent;
+                width: 30px;
+                outline: none;
+                caret-color: #ff5400;
+                color: #fff;
+                text-align: center;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+      .bottom-group {
+        .subtotal {
+          .total-price {
+            color: #ff5400;
+          }
+        }
+      }
+    }
+  }
+}
+#overlay-cart {
+  position: absolute;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  @include transition(0.5s);
+  &.open {
+    background: #161829;
+    visibility: visible;
+    opacity: 0.5;
+  }
+}

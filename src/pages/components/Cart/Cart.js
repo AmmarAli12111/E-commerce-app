@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./Cart.css";
+import "./Cart.scss";
 import { useSelector } from "react-redux";
 import EmptyCart from "./EmptyCart/EmptyCart";
 import { Link } from "react-router-dom";
@@ -89,10 +89,10 @@ function CartItems(props) {
                         >
                           -
                         </button>
-                        <lable
+                        <label
                           htmlFor={`Quantity-${item.id}`}
                           className="d-none"
-                        ></lable>
+                        ></label>
                         <input
                           type="text"
                           defaultValue="1"

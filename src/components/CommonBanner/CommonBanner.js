@@ -1,5 +1,5 @@
 import React from "react";
-import "./CommonBanner.css";
+import "./CommonBanner.scss";
 import { Link, useLocation } from "react-router-dom";
 
 function CommonBanner() {

@@ -1,0 +1,228 @@
+// import mixins
+
+@use "../../../sass/helpers/mixins" as *;
+
+.header-section {
+  .navigation {
+    width: 452px;
+    &:not(.nav-mobile .navigation) {
+      @media (max-width: 1100px) {
+        display: none !important;
+      }
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        153.32deg,
+        rgba(255, 255, 255, 0.3) -65.62%,
+        rgba(255, 255, 255, 0.1) 83.28%
+      );
+      -webkit-backdrop-filter: blur(15px);
+      backdrop-filter: blur(15px);
+      z-index: -1;
+      @include box-shadow(0px 4px 24px -1px rgba(0, 0, 0, 0.2));
+      @include border-radius(30px);
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      background: #161829;
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+      z-index: -2;
+      border-radius: 30px;
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      -ms-border-radius: 30px;
+      -o-border-radius: 30px;
+    }
+    @media (max-width: 1100px) {
+      &::after {
+        @include border-radius(0px);
+        opacity: 0.4;
+      }
+      &::before {
+        @include border-radius(0px);
+      }
+    }
+    > li {
+      @media (max-width: 1100px) {
+        width: 100%;
+        margin: 10px 0;
+      }
+      &:first-of-type {
+        div {
+          padding: 18px 15px;
+          background-color: #ff5400;
+          color: #fff;
+          width: 55px;
+          cursor: pointer;
+          @include transition(0.3s);
+          @media (max-width: 1100px) {
+            background-color: transparent;
+            z-index: 2;
+            @include transition(0s);
+            svg {
+              font-size: 20px;
+            }
+          }
+        }
+        @media (max-width: 1100px) {
+          position: absolute !important;
+          left: auto !important;
+          height: 50px !important;
+          width: 50px !important;
+          background-color: transparent;
+          cursor: auto;
+          left: 30px !important;
+        }
+      }
+      &:nth-child(2) {
+        @media (min-width: 1101px) {
+          position: absolute;
+          left: 0;
+          height: 100%;
+          width: 55px;
+          z-index: -1;
+          border-radius: 80px;
+          @include transition(0.3s);
+        }
+        @media (max-width: 1100px) {
+          height: 50px;
+          padding: 0 30px;
+        }
+      }
+      input {
+        color: #fff;
+        background: #ff5400;
+        padding: 8px 20px 10px;
+        outline: none;
+        z-index: -1;
+        cursor: text;
+        @include transition(0.3s);
+        @media (max-width: 1100px) {
+          position: relative !important;
+          padding: 8px 45px 10px;
+          background: linear-gradient(
+            153.32deg,
+            rgba(255, 255, 255, 0.3) -65.62%,
+            rgba(255, 255, 255, 0.1) 83.28%
+          );
+          -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+          z-index: 1;
+          @include box-shadow(0px 4px 24px -1px rgba(0, 0, 0, 0.2));
+          @include transition(0s);
+          &::placeholder {
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+    li {
+      a {
+        padding: 16px 18px;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .dropdown {
+        display: none;
+        opacity: 0;
+        z-index: 1;
+        padding: 15px 0 !important;
+        background: linear-gradient(
+          153.32deg,
+          rgba(255, 255, 255, 0.3) -65.62%,
+          rgba(255, 255, 255, 0.1) 83.28%
+        );
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        @include box-shadow(0px 4px 24px -1px rgba(0, 0, 0, 0.2));
+        @include transition(opacity 0.3s ease-in-out);
+        &::before {
+          position: absolute;
+          content: "";
+          display: block;
+          width: 100%;
+          height: 80px;
+          left: 0;
+          top: -12px;
+          z-index: -3;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: #161829;
+          opacity: 0.2;
+          width: 100%;
+          height: 100%;
+          z-index: -2;
+          @include border-box(10px);
+        }
+        li {
+          width: 100%;
+          a {
+            padding: 8px 40px;
+            padding-right: 50px;
+          }
+        }
+      }
+      &:has(> .close-icon) {
+        @media (max-width: 1101px) {
+          display: none;
+        }
+      }
+    }
+  }
+  &.head-fixed {
+    .navigation {
+      &::before,
+      ::after {
+        @media (min-width: 1101px) {
+          display: none !important;
+        }
+      }
+    }
+    .close-icon {
+      color: #fff;
+      cursor: pointer;
+      left: -40px;
+      z-index: 11;
+      visibility: hidden;
+      height: 30px;
+      width: 30px;
+      @include transition(0.3s);
+      @include transform(translateY(-50%) rotate(45deg));
+      &:hover {
+        color: #ff5400;
+      }
+    }
+    &.openSearch {
+      @media (min-width: 1101px) {
+        & .close-icon {
+          opacity: 1 !important;
+          visibility: visible;
+        }
+        & li:nth-child(2) {
+          width: 100%;
+          z-index: 10;
+        }
+        & li input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

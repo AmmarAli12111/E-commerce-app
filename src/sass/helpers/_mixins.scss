@@ -1,0 +1,52 @@
+///
+/// Generates cross-browser-compatible `border-radius` for a given element.
+///
+///  @param {List} $values
+
+@mixin border-radius($value) {
+  -webkit-border-radius: $values; // iOS Safari 3.2, Android 2.1
+  border-radius: $values;
+}
+
+///
+/// Generates cross-browser-compatible `list-style` for a given element.
+
+@mixin list-style {
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+///
+/// Generates cross-browser-compatible `transform` for a given element.
+///
+/// @param {String} $values
+///
+///
+
+@mixin transform($values) {
+  -webkit-transform: $values;
+  -ms-transform: $values;
+  transform: $values;
+}
+
+///
+/// Generates cross-browser-compatible `transition` output for a given element.
+///
+///
+/// @param {Arglist} $values
+///
+
+@mixin x-transition($values...) {
+  -webkit-transition: $values;
+  transition: $values;
+}
+
+///
+/// Generates cross-browser-compatible `box-shadow` for a given element.
+///
+
+@mixin box-shadow($values...) {
+  -webkit-box-shadow: $values;
+  box-shadow: $values;
+}

@@ -1,0 +1,40 @@
+.nav-mobile .nav-item {
+  @media (min-width: 1101px) {
+    display: none;
+  }
+  .nav-item {
+    position: static !important;
+    display: block !important;
+    margin: 0 !important;
+    a {
+      padding: 12px 40px;
+    }
+    .dropdown {
+      top: 100px;
+      left: 0 !important;
+      width: 100%;
+      margin-top: 0;
+      margin-left: 0;
+      display: block;
+      padding: 0 !important;
+      background: transparent;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      opacity: 1;
+      backdrop-filter: none;
+      &::before,
+      ::after {
+        content: none;
+      }
+      li {
+        a {
+          padding: 12px 40px !important;
+        }
+      }
+    }
+  }
+  .navigation {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}

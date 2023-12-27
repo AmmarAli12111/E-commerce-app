@@ -1,5 +1,5 @@
 import React from "react";
-import "./Footer.css";
+import "./Footer.scss";
 import { RiWhatsappLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import {
