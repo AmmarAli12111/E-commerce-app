@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./_FeaturedSection.scss";
+import "./FeaturedSection.scss";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { AiOutlineStar, AiFillStar, AiOutlineHeart } from "react-icons/ai";

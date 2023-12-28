@@ -45,15 +45,17 @@ module.exports = (env, argv) => {
             loader: "babel-loader",
           },
         },
-
         {
-          test: /\.s?css$/,
+          test: /\.(s[ac]|c)ss$/i,
           use: [
-            // fallback to style-loader in development
-            process.env.NODE_ENV !== "production"
-              ? "style-loader"
-              : MiniCssExtractPlugin.loader,
+            {
+              loader: MiniCssExtractPlugin.loader,
+              // This is required for asset imports in CSS, such as url()
+              options: { publicPath: "" },
+            },
             "css-loader",
+            // according to the docs, sass-loader should be at the bottom, which
+            // loads it first to avoid prefixes in your sourcemaps and other issues.
             "sass-loader",
           ],
         },
@@ -75,7 +77,9 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         template: "./public/index.html",
       }),
-      new MiniCssExtractPlugin(),
+      new MiniCssExtractPlugin({
+        filename: "styles.css", // Specify the name of the extracted CSS file
+      }),
     ],
   };
   if (!isProduction) {

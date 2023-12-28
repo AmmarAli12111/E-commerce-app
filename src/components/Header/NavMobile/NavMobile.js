@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { LinkItem } from "../NavBar/NavBar";
 import { dropdownLinks } from "../NavBar/dorpdownLinks";
-import "./_NavMobile.scss";
+import "./NavMobile.scss";
 import { FiSearch } from "react-icons/fi";
 
 function NavMobile(props) {

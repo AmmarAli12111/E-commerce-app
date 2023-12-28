@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./_Register.scss";
+import "./Register.scss";
 
 class Register extends Component {
   render() {

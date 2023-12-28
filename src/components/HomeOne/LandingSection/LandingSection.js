@@ -1,5 +1,5 @@
 import React from "react";
-import "./_LandingSection.scss";
+import "./LandingSection.scss";
 import image1 from "../../../assets/images/wallpaperflare.com_wallpaper (7).webp";
 import image from "../../../assets/images/wallpaperflare.com_wallpaper (12).webp";
 import { Swiper, SwiperSlide } from "swiper/react";

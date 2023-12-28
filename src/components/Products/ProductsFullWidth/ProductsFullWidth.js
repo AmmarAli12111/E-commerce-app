@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Products from "../ProductsLeftSidebar/Products";
-import "../_Products.scss";
-import "./_ProductsFullWidth.scss";
+import "../Products.scss";
+import "./ProductsFullWidth.scss";
 import Control from "../ProductsLeftSidebar/Control";
 import FeaturesFilter from "../ProductsLeftSidebar/Filters/FilterComponent";
 import Filters from "../ProductsLeftSidebar/Filters/Filters";

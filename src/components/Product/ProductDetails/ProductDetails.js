@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
-import "../_Product.scss";
+import "../Product.scss";
 import { Link } from "react-router-dom";
 
 function ProductDetails(props) {

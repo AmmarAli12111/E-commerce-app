@@ -1,5 +1,5 @@
 import React from "react";
-import "./_ContactUs.scss";
+import "./ContactUs.scss";
 import { Link } from "react-router-dom";
 
 function ContactUs(props) {

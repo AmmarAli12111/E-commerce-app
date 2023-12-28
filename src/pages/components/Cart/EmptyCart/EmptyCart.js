@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./_EmptyCart.scss";
+import "./EmptyCart.scss";
 import { Link } from "react-router-dom";
 
 class EmptyCart extends Component {

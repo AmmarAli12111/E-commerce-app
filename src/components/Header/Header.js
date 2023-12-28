@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import LogoBar from "./LogoBar/LogBar";
 import Announcement from "./Announcement/Announcement";
-import "./_Header.scss";
+import "./Header.scss";
 
 function Header(props) {
   useEffect(() => {

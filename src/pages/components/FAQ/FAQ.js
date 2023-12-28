@@ -1,5 +1,5 @@
 import React from "react";
-import "./_FAQ.scss";
+import "./FAQ.scss";
 
 function FAQ(props) {
   const FAQarr = [

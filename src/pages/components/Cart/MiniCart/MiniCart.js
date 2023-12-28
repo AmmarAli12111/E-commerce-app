@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./_MiniCart.scss";
+import "./MiniCart.scss";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { useSelector } from "react-redux";
