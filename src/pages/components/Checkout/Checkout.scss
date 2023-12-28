@@ -1,6 +1,8 @@
 // import mixins
 
-@use "../../../scss/helpers/mixins" as *;
+@use "../../../sass/helpers/mixins" as *;
+
+@use "../../../sass/helpers/variables" as *;
 
 .check-out-section {
   padding: 100px 0;
@@ -21,7 +23,7 @@
       input {
         vertical-align: top;
         outline: 0;
-        caret-color: #ff5400;
+        caret-color: $main_color;
         color: #fff;
         background: linear-gradient(
           120deg,
@@ -43,7 +45,7 @@
     textarea {
       vertical-align: top;
       outline: 0;
-      caret-color: #ff5400;
+      caret-color: $main_color;
       color: #fff;
       background: linear-gradient(
         120deg,
@@ -113,7 +115,7 @@
       }
     }
     a {
-      background: #ff5400;
+      background: $main_color;
       padding: 12px 0;
       border: 1px solid transparent;
       @include transition(0.4s);

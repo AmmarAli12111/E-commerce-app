@@ -1,6 +1,8 @@
 // import mixins
 
-@use "../../../scss/helpers/mixins" as *;
+@use "../../../sass/helpers/mixins" as *;
+
+@use "../../../sass/helpers/variables" as *;
 
 .swiper-slide {
   .wrapper {
@@ -12,7 +14,7 @@
     }
     .caption {
       @include transform(translateY(-50%));
-      @media (max-width: 767px) {
+      @include max-breakpoint(screen-sm) {
         width: 100%;
         text-align: center;
         left: 0;
@@ -23,7 +25,7 @@
         font-size: 4rem;
         span {
           &.emphasis {
-            color: #ff5400;
+            color: $main_color;
           }
           &:not(.emphasis) {
             font-size: 3.5rem;
@@ -35,7 +37,7 @@
           letter-spacing: 2px;
           color: #fff;
           padding-right: 8rem;
-          @media (max-width: 767px) {
+          @include max-breakpoint(screen-sm) {
             padding-right: 0;
           }
         }
@@ -45,7 +47,7 @@
           letter-spacing: 0px;
           text-align: justify;
           font-size: 1.2rem;
-          @media (max-width: 767px) {
+          @include max-breakpoint(screen-sm) {
             text-align: center;
             max-width: 100% !important;
           }
@@ -53,12 +55,12 @@
       }
       .link-effect {
         width: 150px;
-        background-color: #ff5400;
+        background-color: $main_color;
         color: #fff;
         padding: 10px 19px 9px 19px;
-        border: 1px solid #ff5400;
+        border: 1px solid $main_color;
         @include transition(0.4s);
-        @media (max-width: 767px) {
+        @include max-breakpoint(screen-sm) {
           margin: auto;
         }
         &:hover {
@@ -105,7 +107,7 @@
   right: 70px;
   z-index: 1;
   @include transform(translateY(50%));
-  @media (max-width: 767px) {
+  @include max-breakpoint(screen-sm) {
     padding: 0 20px;
     flex-direction: row !important;
     width: 100%;
@@ -121,11 +123,11 @@
   .button-prev-slide,
   .button-next-slide {
     cursor: pointer;
-    background-color: #ff5400;
+    background-color: $main_color;
     color: #fff;
     width: 45px;
     height: 45px;
-    border: 1px solid #ff5400;
+    border: 1px solid $main_color;
     @include transition(0.5s);
     &:hover {
       background-color: rgb(0, 0, 0, 0.1);
@@ -133,7 +135,7 @@
       border: 1px solid #6c6a6a;
       @include box-shadow(10px 10px 20px rgba(0, 0, 0, 0.2));
     }
-    @media (max-width: 992px) {
+    @include max-breakpoint(screen-md) {
       bottom: 10px;
     }
   }
@@ -151,7 +153,7 @@
     right: 70px;
     z-index: 1;
     @include transform(translateY(-50%));
-    @media (max-width: 767px) {
+    @include max-breakpoint(screen-sm) {
       padding: 0 20px;
       flex-direction: row !important;
       width: 100%;
@@ -163,16 +165,16 @@
     .button-prev-slide,
     .button-next-slide {
       cursor: pointer;
-      background-color: #ff5400;
+      background-color: $main_color;
       color: #fff;
       width: 45px;
       height: 45px;
-      border: 1px solid #ff5400;
+      border: 1px solid $main_color;
       @include transition(0.5s);
-      @media (max-width: 767px) {
+      @include max-breakpoint(screen-sm) {
         @include transform(rotate(-90deg));
       }
-      @media (max-width: 991px) {
+      @include max-breakpoint(screen-md) {
         bottom: 10px;
       }
       &:hover {
@@ -182,7 +184,7 @@
         @include box-shadow(10px 10px 20px rgba(0, 0, 0, 0.2));
       }
     }
-    @media (max-width: 991px) {
+    @include max-breakpoint(screen-md) {
       .button-next-slide {
         right: 10px;
       }
@@ -192,7 +194,7 @@
     }
   }
   .swiper-pagination-bullet {
-    border: 1px solid #ff5400 !important;
+    border: 1px solid $main_color !important;
     margin: 0px 8px !important;
     width: 10px !important;
     height: 10px !important;
@@ -202,7 +204,7 @@
     @include transition(0.4s);
     &.swiper-pagination-bullet-active {
       width: 60px !important;
-      background-color: #ff5400 !important;
+      background-color: $main_color !important;
       height: 8px;
     }
   }

@@ -1,22 +1,24 @@
 // import mixns
 
-@use "../../../scss/helpers/mixins" as *;
+@use "../../../sass/helpers/mixins" as *;
+
+@use "../../../sass/helpers/variables" as *;
 
 .contact-us-section {
   color: #fff;
   .contact-wrapper {
-    @media screen and (max-width: 767px) {
+    @include max-breakpoint(screen-sm) {
       flex-wrap: wrap;
     }
   }
   .contact-info {
     width: 290px;
-    @media screen and (max-width: 767px) {
+    @include max-breakpoint(screen-sm) {
       width: 100%;
       text-align: start;
     }
     h3 {
-      color: #ff5400;
+      color: $main_color;
     }
     .contact-details {
       .icon-box {
@@ -61,7 +63,7 @@
           }
           &:hover {
             svg {
-              color: #ff5400;
+              color: $main_color;
             }
           }
         }
@@ -74,19 +76,19 @@
       background: rgb(255, 255, 255, 0.1);
       backdrop-filter: blur(25px);
       @include box-shadow(5px 5px 30px rgba(0, 0, 0, 0.2));
-      @media screen and (max-width: 767px) {
+      @include max-breakpoint(screen-sm) {
         padding: 55px 20px 30px;
       }
       h1 {
         span {
-          color: #ff5400;
+          color: $main_color;
         }
       }
       input,
       textarea {
         vertical-align: top;
         outline: 0;
-        caret-color: #ff5400;
+        caret-color: $main_color;
         color: #fff;
         background: linear-gradient(
           120deg,
@@ -102,7 +104,7 @@
       }
       a {
         vertical-align: top;
-        background-color: #ff5400;
+        background-color: $main_color;
         color: #fff;
         border: 1px solid transparent !important;
         &:hover {

@@ -1,6 +1,8 @@
 // import mixins
 
-@use "../../../scss/helpers/mixins" as *;
+@use "../../../sass/helpers/mixins" as *;
+
+@use "../../../sass/helpers/variables" as *;
 
 .login-section {
   color: #fff;
@@ -11,7 +13,7 @@
     padding: 40px;
     @include box-shadow(5px 5px 30px rgba(0, 0, 0, 0.2));
     button {
-      background-color: #ff5400;
+      background-color: $main_color;
       color: #fff;
     }
   }
@@ -23,7 +25,7 @@
     );
     color: #fff;
     outline: none;
-    caret-color: #ff5400;
+    caret-color: $main_color;
     &::placeholder {
       font-size: 15px;
       color: #fff;

@@ -1,6 +1,8 @@
 // import mixins
 
-@use "../../../scss/helpers/mixins" as *;
+@use "../../../sass/helpers/mixins" as *;
+
+@use "../../../sass/helpers/variables" as *;
 
 .Blog-section {
   padding: 100px 0;
@@ -12,7 +14,7 @@
     height: 0px;
     top: 200px;
     left: 150px;
-    @include box-shadow(100px 100px 400px 150px #ff5400);
+    @include box-shadow(100px 100px 400px 150px $main_color);
     @include border-radius(50%);
   }
   &::after {
@@ -22,7 +24,7 @@
     height: 0px;
     bottom: 300px;
     right: 350px;
-    @include box-shadow(100px 100px 400px 150px #ff5400);
+    @include box-shadow(100px 100px 400px 150px $main_color);
     @include border-radius(50%);
   }
   .Blogs-wrapper {
@@ -31,10 +33,10 @@
     z-index: 10;
     .Blog-item {
       width: calc(100% / 3 - 8px);
-      @media (max-width: 991px) {
+      @include max-breakpoint(screen-md) {
         width: calc(100% / 2 - 8px);
       }
-      @media (max-width: 767px) {
+      @include max-breakpoint(screen-sm) {
         width: 100%;
       }
     }
@@ -42,10 +44,10 @@
       overflow: hidden;
     }
     a {
-      background-color: #ff5400;
+      background-color: $main_color;
       color: #fff;
       padding: 8px 15px;
-      border: 1px solid #ff5400;
+      border: 1px solid $main_color;
       @include transition(0.5s);
       &:hover {
         background-color: rgb(0, 0, 0, 0.1);

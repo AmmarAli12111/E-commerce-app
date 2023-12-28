@@ -1,5 +1,9 @@
+// import mixins
+
+@use "../../../sass/helpers/mixins" as *;
+
 .nav-mobile {
-  @media (min-width: 1101px) {
+  @include min-breakpoint(screen-lg) {
     display: none;
   }
   .nav-item {

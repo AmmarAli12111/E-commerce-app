@@ -1,6 +1,8 @@
 // import mixins
 
-@use "../../scss/helpers/mixins" as *;
+@use "../../sass/helpers/mixins" as *;
+
+@use "../../sass/helpers/variables" as *;
 
 .footer-section {
   background: rgb(255, 255, 255, 0.1);
@@ -9,16 +11,16 @@
   border-top-right-radius: 50px;
   color: #fff;
   @include box-shadow(20px 20px 50px rgba(0, 0, 0, 0.2));
-  @media (max-width: 767px) {
+  @include max-breakpoint(screen-sm) {
     padding-bottom: 70px !important;
   }
   .footer-item {
     h3 {
-      color: #ff5400;
+      color: $main_color;
     }
     h2 {
       letter-spacing: 0;
-      color: #ff5400;
+      color: $main_color;
     }
     ul {
       li {
@@ -45,7 +47,7 @@
     form {
       a {
         outline: none;
-        background-color: #ff5400;
+        background-color: $main_color;
         color: #fff;
         border: 1px solid transparent !important;
         @include transition(0.5s);
@@ -69,8 +71,8 @@
           @include box-shadow(10px 10px 20px rgba(0, 0, 0, 0.2));
           @include transition(0.4s);
           &:hover {
-            background-color: #ff5400;
-            border: 1px solid #ff5400;
+            background-color: $main_color;
+            border: 1px solid $main_color;
           }
         }
       }

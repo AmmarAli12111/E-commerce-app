@@ -1,12 +1,14 @@
 // import mixins
 
-@use "../../../../scss/helpers/mixins" as *;
+@use "../../../../sass/helpers/mixins" as *;
+
+@use "../../../../sass/helpers/variables" as *;
 
 .emptyCart-section {
   padding: 100px 0;
   color: #fff;
   a {
-    background-color: #ff5400;
+    background-color: $main_color;
     border: 1px solid transparent !important;
     padding: 15px 0;
     @include transition(0.5s);

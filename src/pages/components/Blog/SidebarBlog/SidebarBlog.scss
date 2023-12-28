@@ -1,20 +1,22 @@
 // import mixins
 
-@use "../../../../scss/helpers/mixins" as *;
+@use "../../../../sass/helpers/mixins" as *;
+
+@use "../../../../sass/helpers/variables" as *;
 
 .side-wrapper {
   > div {
     top: 100px;
     z-index: 5;
   }
-  @media (max-width: 991px) {
+  @include max-breakpoint(screen-md) {
     margin-top: 50px;
   }
   .sidebar-area {
     background: rgb(255, 255, 255, 0.1);
     -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+    @include box-shadow(5px 5px 30px rgba(0, 0, 0, 0.2));
     &:first-of-type {
       form {
         background: linear-gradient(
@@ -22,14 +24,14 @@
           rgba(255, 255, 255, 0.18),
           rgba(255, 255, 255, 0.05)
         );
-        caret-color: #ff5400;
+        caret-color: $main_color;
       }
       input {
         background-color: transparent;
         font-size: 14px;
         color: #fff;
         outline: none;
-        caret-color: #ff5400;
+        caret-color: $main_color;
         &::placeholder {
           color: #fff;
         }
@@ -54,7 +56,7 @@
         a {
           border: 1px solid #7b7b7b;
           svg {
-            color: #ff5400;
+            color: $main_color;
             @include transition(0.7s);
           }
           &:hover svg {
@@ -79,10 +81,10 @@
         transform: translate(-50%, -50%);
         width: 0;
         height: 0;
-        border-radius: 100%;
-        background-color: #ff5400;
+        background-color: $main_color;
         z-index: -1;
         @include transition(all 0.7s ease);
+        @include border-radius(100%);
       }
       &:hover::before {
         width: 300%;

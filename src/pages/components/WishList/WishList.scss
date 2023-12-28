@@ -1,6 +1,8 @@
 // import minixs
 
-@use "../../../scss/helpers/mixins" as *;
+@use "../../../sass/helpers/mixins" as *;
+
+@use "../../../sass/helpers/variables" as *;
 
 .wishlist-section {
   position: relative;
@@ -12,13 +14,13 @@
   .js-collection-wishlist {
     > div {
       width: calc(100% / 4);
-      @media (min-width: 992px) and (max-width: 1200px) {
+      @include between-breakpoints(992px, 1200px) {
         width: calc(100% / 3);
       }
-      @media (max-width: 991px) {
+      @include max-breakpoint(screen-md) {
         width: calc(100% / 2);
       }
-      @media (max-width: 767px) {
+      @include max-breakpoint(screen-sm) {
         width: 100%;
       }
     }
@@ -79,14 +81,14 @@
         justify-content: space-between;
         .rigth-side {
           .price-product {
-            color: #ff5400;
+            color: $main_color;
             font-size: 18px;
             font-weight: 600;
           }
           .reviews {
             .starts {
               svg {
-                color: #ff5400;
+                color: $main_color;
                 font-size: 14px;
               }
             }
@@ -102,11 +104,11 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            border-radius: 50%;
-            background-color: #ff5400;
-            border: 1px solid #ff5400;
+            background-color: $main_color;
+            border: 1px solid $main_color;
             cursor: pointer;
             @include transition(0.3s);
+            @include border-radius(50%);
             &:hover {
               background-color: transparent;
               border: 1px solid #6c6a6a;
@@ -143,8 +145,8 @@
         @include transition(0.4s ease-in-out);
         @include border-radius(50%);
         &:hover {
-          background-color: #ff5400;
-          border: 1px solid #ff5400;
+          background-color: $main_color;
+          border: 1px solid $main_color;
         }
       }
     }

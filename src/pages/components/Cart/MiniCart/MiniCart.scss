@@ -1,6 +1,8 @@
 // import mixins
 
-@use "../../../../scss/helpers/mixins" as *;
+@use "../../../../sass/helpers/mixins" as *;
+
+@use "../../../../sass/helpers/variables" as *;
 
 #cart-sidebar-wrapper {
   z-index: 99999 !important;
@@ -30,16 +32,16 @@
     @include box-shadow(0px 4px 24px -1px rgba(0, 0, 0, 0.2));
     @include transition(0.5s);
     @include transform(translateX(100%));
-    @media (max-width: 1500px) {
+    @include max-breakpoint(1500px) {
       width: 40%;
     }
-    @media (max-width: 1300px) {
+    @include max-breakpoint(1300px) {
       width: 50%;
     }
-    @media (max-width: 991px) {
+    @include max-breakpoint(screen-md) {
       width: 60%;
     }
-    @media (max-width: 767px) {
+    @include max-breakpoint(screen-sm) {
       width: 100%;
     }
     &.act_opened {
@@ -47,7 +49,7 @@
       opacity: 1;
     }
     .head-minicart {
-      background-color: #ff5400;
+      background-color: $main_color;
       height: 40px;
       .close_popup {
         width: 20px;
@@ -70,7 +72,7 @@
     }
     .cart-inner {
       > a {
-        background-color: #ff5400;
+        background-color: $main_color;
         border: 1px solid transparent !important;
         @include transition(0.4s);
         &:hover {
@@ -89,7 +91,7 @@
       .group-button {
         a {
           &:first-of-type {
-            background-color: #ff5400;
+            background-color: $main_color;
             border: 1px solid transparent !important;
             @include transition(0.4s);
             &:hover {
@@ -142,7 +144,7 @@
               line-height: 19px;
             }
             .money {
-              color: #ff5400;
+              color: $main_color;
             }
             .quantity-item {
               border: 1px solid #757575;
@@ -150,7 +152,7 @@
                 background-color: transparent;
                 width: 30px;
                 outline: none;
-                caret-color: #ff5400;
+                caret-color: $main_color;
                 color: #fff;
                 text-align: center;
                 font-size: 14px;
@@ -162,7 +164,7 @@
       .bottom-group {
         .subtotal {
           .total-price {
-            color: #ff5400;
+            color: $main_color;
           }
         }
       }

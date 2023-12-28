@@ -1,6 +1,8 @@
 // import mixins
 
-@use "../../../scss/helpers/mixins" as *;
+@use "../../../sass/helpers/mixins" as *;
+
+@use "../../../sass/helpers/variables" as *;
 
 .header-section {
   h1 {
@@ -19,7 +21,7 @@
 }
 
 .main-navigationbar {
-  @media (max-width: 1100px) {
+  @include max-breakpoint(screen-lg) {
     padding: 10px 0;
     border-bottom: 1px solid #757575;
     height: 75.5px;
@@ -60,7 +62,7 @@
           opacity: 1;
           @include transform(none);
         }
-        @media (max-width: 767px) {
+        @include max-breakpoint(screen-sm) {
           width: 100%;
         }
       }
@@ -70,23 +72,23 @@
     }
   }
   .Logo {
-    @media (max-width: 1100px) {
+    @include max-breakpoint(screen-lg) {
       order: 1;
     }
-    @media (max-width: 767px) {
+    @include max-breakpoint(screen-sm) {
       order: 0;
     }
   }
   .icon-bar {
     width: 55px;
     height: 55px;
-    background-color: #ff5400;
+    background-color: $main_color;
     cursor: pointer;
     @include transition(0.5s);
-    @media (min-width: 1101px) {
+    @include min-breakpoint(screen-lg) {
       display: none !important;
     }
-    @media (max-width: 767px) {
+    @include max-breakpoint(screen-sm) {
       div {
         align-items: flex-end !important;
       }
@@ -104,11 +106,7 @@
     }
     &.active {
       div {
-        transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
+        @include transform(rotate(0deg));
       }
       span {
         &:nth-child(2) {
@@ -127,10 +125,10 @@
     }
   }
   .header-control {
-    @media (min-width: 768px) and (max-width: 1100px) {
+    @include between-breakpoints(768px, 1100px) {
       order: 2;
     }
-    @media (max-width: 767px) {
+    @include max-breakpoint(screen-sm) {
       position: fixed;
       bottom: 0;
       left: 0;
@@ -195,7 +193,7 @@
         width: 100%;
         padding: 8px 40px;
       }
-      @media (max-width: 767px) {
+      @include max-breakpoint(screen-sm) {
         top: -122px;
         margin-top: 0 !important;
         left: 5px;
@@ -212,7 +210,7 @@
       color: #fff;
       border: 1px solid transparent;
       @include box-shadow(0px 4px 24px -1px rgba(0, 0, 0, 0.2));
-      @media (max-width: 1101px) {
+      @include max-breakpoint(screen-lg) {
         background: transparent;
         box-shadow: none;
         backdrop-filter: none;
@@ -222,13 +220,13 @@
         font-size: 13px;
       }
       a {
-        background-color: #ff5400;
+        background-color: $main_color;
         padding: 18px 15px;
         width: 55px;
       }
     }
     .user-icon {
-      background-color: #ff5400;
+      background-color: $main_color;
       height: 55px;
       width: 55px;
       @include transition(0.3s);

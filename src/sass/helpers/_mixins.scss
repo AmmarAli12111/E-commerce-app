@@ -1,0 +1,157 @@
+/// Generates cross-browser-compatible `border-radius` for a given element.
+///
+/// @param {List} $values
+
+@mixin border-radius($values) {
+  -webkit-border-radius: $values; // iOS Safari 3.2, Android 2.1
+  border-radius: $values;
+}
+
+/// Generates cross-browser-compatible `list-style` for a given element.
+///
+/// This mixin sets `list-style` to `none` and removes padding.
+
+@mixin list-style {
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+/// Generates cross-browser-compatible `transform` for a given element.
+///
+/// @param {String} $values
+
+@mixin transform($values) {
+  -webkit-transform: $values;
+  -ms-transform: $values;
+  transform: $values;
+}
+
+/// Generates cross-browser-compatible `transition` output for a given element.
+///
+/// @param {Arglist} $values
+
+@mixin transition($values...) {
+  -webkit-transition: $values;
+  transition: $values;
+}
+
+/// Generates cross-browser-compatible `box-shadow` for a given element.
+///
+/// @param {Arglist} $values
+
+@mixin box-shadow($values...) {
+  -webkit-box-shadow: $values;
+  box-shadow: $values;
+}
+
+/// Generates cross-browser-compatible `keyframes` for a given animation name.
+///
+/// @param {String} $anim-name
+
+@mixin keyF($anim-name) {
+  @-webkit-keyframes #{$anim-name} {
+    @content;
+  }
+  @keyframes #{$anim-name} {
+    @content;
+  }
+}
+
+@mixin between-breakpoints($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+/// Media Queries
+///
+/// @param {String} $point
+///
+///
+
+@mixin max-breakpoint($point) {
+  @if $point == screen-xl {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  } @else if $point == screen-lg {
+    @media (max-width: 1100px) {
+      @content;
+    }
+  } @else if $point == screen-md {
+    @media (max-width: 991px) {
+      @content;
+    }
+  } @else if $point == screen-sm {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == iphone5-horizontal {
+    @media (max-width: 576px) {
+      @content;
+    }
+  } @else {
+    @if type-of($point) == "string" {
+      @error "Error message for string type";
+    } @else if type-of($point) == "number" {
+      $pointString: inspect($point); // Convert the number to a string
+
+      // Check if the point has "px" in the string
+      @if str-index($pointString, "px") {
+        // If "px" is present, use the value directly
+        @media (max-width: #{$point}) {
+          @content;
+        }
+      } @else {
+        // If "px" is not present, add "px" to the value
+        @media (max-width: #{$point + px}) {
+          @content;
+        }
+      }
+    }
+  }
+}
+
+@mixin min-breakpoint($point) {
+  @if $point == screen-xl {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $point == screen-lg {
+    @media (min-width: 1101px) {
+      @content;
+    }
+  } @else if $point == screen-md {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $point == screen-sm {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == iphone5-horizontal {
+    @media (min-width: 577px) {
+      @content;
+    }
+  } @else {
+    @if type-of($point) == "string" {
+      @error "Error message for string type";
+    } @else if type-of($point) == "number" {
+      $pointString: inspect($point); // Convert the number to a string
+
+      // Check if the point has "px" in the string
+      @if str-index($pointString, "px") {
+        // If "px" is present, use the value directly
+        @media (min-width: #{$point}) {
+          @content;
+        }
+      } @else {
+        // If "px" is not present, add "px" to the value
+        @media (min-width: #{$point + px}) {
+          @content;
+        }
+      }
+    }
+  }
+}

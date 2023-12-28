@@ -1,6 +1,8 @@
 // import mixins
 
-@use "../../../scss/helpers/mixins" as *;
+@use "../../../sass/helpers/mixins" as *;
+
+@use "../../../sass/helpers/variables" as *;
 
 .support-section {
   padding: 200px 0;
@@ -11,7 +13,7 @@
     width: 0px;
     height: 0px;
     left: 150px;
-    @include box-shadow(100px 100px 400px 150px #ff5400);
+    @include box-shadow(100px 100px 400px 150px $main_color);
     @include border-radius(50%);
   }
   &::after {
@@ -20,7 +22,7 @@
     width: 0px;
     height: 0px;
     right: 350px;
-    @include box-shadow(100px 100px 400px 150px #ff5400);
+    @include box-shadow(100px 100px 400px 150px $main_color);
     @include border-radius(50%);
   }
   .container-xl {
@@ -53,7 +55,7 @@
     width: 600px;
     max-width: 100%;
     .hero-text {
-      color: #ff5400;
+      color: $main_color;
     }
     .hero-search {
       form {
@@ -63,13 +65,13 @@
           rgba(255, 255, 255, 0.05)
         );
         outline: none;
-        caret-color: #ff5400;
+        caret-color: $main_color;
         input {
           background-color: transparent;
           font-size: 14px;
           color: #fff;
           outline: none;
-          caret-color: #ff5400;
+          caret-color: $main_color;
           &::placeholder {
             color: #bcbcbc;
           }

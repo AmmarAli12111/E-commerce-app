@@ -1,6 +1,8 @@
 // import mixins
 
-@use "../../scss/helpers/mixins" as *;
+@use "../../sass/helpers/mixins" as *;
+
+@use "../../sass/helpers/variables" as *;
 
 .product-section {
   padding: 50px 0;
@@ -20,7 +22,7 @@
       line-height: 1.2em;
       vertical-align: middle;
       color: #fff;
-      background-color: #ff5400;
+      background-color: $main_color;
       border: 1px solid;
       z-index: 5;
     }
@@ -29,7 +31,7 @@
     .product-reviews {
       span {
         &:first-of-type {
-          color: #ff5400;
+          color: $main_color;
         }
       }
     }
@@ -44,7 +46,7 @@
       @include box-shadow(0px 4px 24px -1px rgba(0, 0, 0, 0.2));
       .price-box {
         .special-price {
-          color: #ff5400;
+          color: $main_color;
         }
         .old-price {
           color: #bcbcbc;
@@ -64,14 +66,14 @@
         @include box-shadow(0px 4px 24px -1px rgba(0, 0, 0, 0.2));
         button {
           outline: none;
-          color: #ff5400;
+          color: $main_color;
           background-color: transparent;
           width: 4.5rem;
         }
         input {
           background-color: transparent;
           outline: none;
-          caret-color: #ff5400;
+          caret-color: $main_color;
           color: #fff;
           writing-mode: horizontal-tb;
           -webkit-writing-mode: horizontal-tb;
@@ -81,7 +83,7 @@
       .product-options {
         a {
           outline: none;
-          background-color: #ff5400;
+          background-color: $main_color;
           color: #fff;
           padding: 10px 60px;
           white-space: nowrap;
@@ -97,7 +99,7 @@
             -webkit-backdrop-filter: blur(25px);
             @include box-shadow(0px 4px 24px -1px rgba(0, 0, 0, 0.2));
           }
-          @media (max-width: 576px) {
+          @include max-breakpoint(iphone5-horizontal) {
             width: 100%;
             margin-left: 0 !important;
             text-align: center;
@@ -110,7 +112,7 @@
             @include box-shadow(10px 10px 20px rgba(0, 0, 0, 0.2));
           }
         }
-        @media (max-width: 576px) {
+        @include max-breakpoint(iphone5-horizontal) {
           width: 100%;
         }
       }
@@ -138,7 +140,7 @@
           color 0.4s ease-out,
           background-color 0.4s ease-out
         );
-        @media (max-width: 567px) {
+        @include max-breakpoint(iphone5-horizontal) {
           width: 100%;
         }
         &:hover {
@@ -150,7 +152,7 @@
         }
       }
       li {
-        @media (max-width: 567px) {
+        @include max-breakpoint(iphone5-horizontal) {
           width: 100%;
           margin: 0 !important;
         }
@@ -161,11 +163,11 @@
         display: block !important;
       }
       .review {
-        @media (max-width: 767px) {
+        @include max-breakpoint(screen-sm) {
           flex-wrap: wrap;
         }
         .review_form_wrapper {
-          @media (max-width: 767px) {
+          @include max-breakpoint(screen-sm) {
             flex: auto;
           }
           .review_form {
@@ -180,7 +182,7 @@
                 vertical-align: top;
                 font-size: 14px;
                 outline: 0;
-                caret-color: #ff5400;
+                caret-color: $main_color;
                 color: #fff;
                 background: linear-gradient(
                   120deg,
@@ -218,8 +220,8 @@
           }
           &:checked {
             &::before {
-              background-color: #ff5400;
-              border: 1px solid #ff5400;
+              background-color: $main_color;
+              border: 1px solid $main_color;
             }
             &::after {
               content: "";
@@ -237,7 +239,7 @@
             }
           }
         }
-        @media (max-width: 767px) {
+        @include max-breakpoint(screen-sm) {
           flex-wrap: wrap;
           gap: 5px;
         }
@@ -246,7 +248,7 @@
         a {
           outline: none;
           padding: 15px 49px;
-          background-color: #ff5400;
+          background-color: $main_color;
           border: 1px solid transparent !important;
           @include transition(0.4s);
           &:hover {

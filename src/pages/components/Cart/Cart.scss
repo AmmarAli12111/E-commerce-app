@@ -1,6 +1,8 @@
 // import mixins
 
-@use "../../../scss/helpers/mixins" as *;
+@use "../../../sass/helpers/mixins" as *;
+
+@use "../../../sass/helpers/variables" as *;
 
 .cart-section {
   padding: 100px 0;
@@ -14,7 +16,7 @@
         rgba(255, 255, 255, 0.01)
       );
       @include box-shadow(5px 5px 30px rgba(0, 0, 0, 0.2));
-      @media screen and (max-width: 576px) {
+      @include max-breakpoint(iphone5-horizontal) {
         .about-item {
           flex-direction: column;
         }
@@ -27,14 +29,14 @@
           width: 130px;
           object-fit: cover;
           object-position: center;
-          @media screen and (max-width: 576px) {
+          @include max-breakpoint(iphone5-horizontal) {
             width: 100%;
           }
         }
       }
       .info-item {
         .product-name {
-          @media screen and (max-width: 576px) {
+          @include max-breakpoint(iphone5-horizontal) {
             flex-direction: column;
           }
           a {
@@ -50,7 +52,7 @@
           }
           .curr-price {
             font-size: 18px;
-            color: #ff5400;
+            color: $main_color;
           }
           .old-price {
             color: #bcbcbc;
@@ -58,7 +60,7 @@
         }
       }
       .right-area {
-        @media screen and (max-width: 576px) {
+        @include max-breakpoint(iphone5-horizontal) {
           flex-direction: row !important;
         }
         .delete-item {
@@ -87,7 +89,7 @@
           }
         }
         .total {
-          color: #ff5400;
+          color: $main_color;
           font-size: 20px;
         }
       }
@@ -115,7 +117,7 @@
           width: 2rem;
           outline: none;
           background-color: transparent;
-          color: #ff5400;
+          color: $main_color;
         }
       }
     }
@@ -135,7 +137,7 @@
         height: 145px;
         resize: none;
         outline: none;
-        caret-color: #ff5400;
+        caret-color: $main_color;
         &::placeholder {
           font-size: 15px;
           color: #bcbcbc;
@@ -158,14 +160,14 @@
           );
           outline: none;
           padding: 7px 10px;
-          caret-color: #ff5400;
+          caret-color: $main_color;
           color: #fff;
           &::placeholder {
             color: #fff;
           }
         }
         a {
-          background: #ff5400;
+          background: $main_color;
           color: #fff;
           padding: 7px 10px;
           border: 1px solid transparent !important;
@@ -173,8 +175,8 @@
             background: rgb(0, 0, 0, 0.4);
             -webkit-backdrop-filter: blur(15px);
             backdrop-filter: blur(15px);
-            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
             border: 1px solid #6c6a6a !important;
+            @include box-shadow(10px 10px 20px rgba(0, 0, 0, 0.2));
           }
         }
       }
@@ -186,7 +188,7 @@
       }
       .group-button {
         a {
-          background: #ff5400;
+          background: $main_color;
           color: #fff;
           cursor: pointer;
           font-size: 13px;
@@ -205,20 +207,20 @@
   }
   .main-cart-items {
     .foot-area {
-      @media (max-width: 567px) {
+      @include max-breakpoint(iphone5-horizontal) {
         flex-wrap: wrap;
         gap: 20px;
       }
       .left {
-        @media (max-width: 567px) {
+        @include max-breakpoint(iphone5-horizontal) {
           width: 100%;
         }
         a {
-          background-color: #ff5400;
+          background-color: $main_color;
           padding: 12px 0;
           border: 1px solid transparent !important;
           @include transition(0.5s);
-          @media (max-width: 567px) {
+          @include max-breakpoint(iphone5-horizontal) {
             width: 100%;
             text-align: center;
           }

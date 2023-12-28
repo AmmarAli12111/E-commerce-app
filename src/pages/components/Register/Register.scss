@@ -1,6 +1,8 @@
 // import mixins
 
-@use "../../../scss/helpers/mixins" as *;
+@use "../../../sass/helpers/mixins" as *;
+
+@use "../../../sass/helpers/variables" as *;
 
 .register-section {
   color: #fff;
@@ -12,7 +14,7 @@
     @include box-shadow(5px 5px 30px rgba(0, 0, 0, 0.2));
     button {
       padding: 14px 30px;
-      background-color: #ff5400;
+      background-color: $main_color;
       color: #fff;
     }
   }
@@ -25,7 +27,7 @@
     padding: 17px 20px;
     color: #fff;
     outline: none;
-    caret-color: #ff5400;
+    caret-color: $main_color;
     &::placeholder {
       font-size: 15px;
       color: #fff;

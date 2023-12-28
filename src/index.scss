@@ -1,6 +1,8 @@
 // import mixins
 
-@use "./scss/helpers/mixins" as *;
+@use "./sass/helpers/mixins" as *;
+
+@use "./sass/helpers/variables" as *;
 
 * {
   vertical-align: baseline;
@@ -12,7 +14,7 @@
     background-color: #efefef;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #ff5400;
+    background-color: $main_color;
     @include border-radius(10px);
   }
 }
@@ -72,7 +74,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 #overlay {
-  @media (max-width: 991px) {
+  @include max-breakpoint(screen-md) {
     position: absolute;
     z-index: 1000;
     opacity: 0;
@@ -90,7 +92,7 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 }
 
-@media (max-width: 991px) {
+@include max-breakpoint(screen-md) {
   #overlay {
     position: absolute;
     z-index: 1000;

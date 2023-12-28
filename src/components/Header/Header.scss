@@ -1,6 +1,6 @@
 // import mixins
 
-@use "../../scss/helpers/mixins" as *;
+@use "../../sass/helpers/mixins" as *;
 
 .header-section {
   z-index: 999;
@@ -14,7 +14,7 @@
     height: 100%;
     z-index: -2;
   }
-  @media (max-width: 1100px) {
+  @include max-breakpoint(screen-lg) {
     &::after {
       position: absolute;
       content: "";
@@ -27,7 +27,7 @@
       z-index: -2;
     }
   }
-  @media (min-width: 1101px) {
+  @include min-breakpoint(screen-lg) {
     &.head-fixed {
       border-bottom: 1px solid #757575;
     }

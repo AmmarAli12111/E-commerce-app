@@ -1,11 +1,13 @@
 // import mixins
 
-@use "../../../scss/helpers/mixins" as *;
+@use "../../../sass/helpers/mixins" as *;
+
+@use "../../../sass/helpers/variables" as *;
 
 .products-fullwidth {
   .content {
     .product-filter {
-      @media (max-width: 400px) {
+      @include max-breakpoint(400px) {
         flex-wrap: wrap;
       }
       .filter-fullwidth-title {
@@ -23,21 +25,21 @@
         @include box-shadow(5px 5px 30px rgba(0, 0, 0, 0.2));
         @include border-radius(30px);
         @include transition(0.3s);
-        @media (max-width: 400px) {
+        @include max-breakpoint(400px) {
           flex: 1;
           margin: 0 !important;
         }
-        @media (min-width: 992px) {
+        @include min-breakpoint(screen-md) {
           display: none !important;
         }
-        @media (max-width: 991px) {
+        @include max-breakpoint(screen-md) {
           display: block !important;
         }
         &.active {
-          background-color: #ff5400;
+          background-color: $main_color;
         }
       }
-      @media (min-width: 992px) {
+      @include min-breakpoint(screen-md) {
         .filter-title-mobile {
           display: block !important;
           color: #fff;
@@ -55,11 +57,11 @@
           @include border-radius(30px);
           @include transition(0.3s);
           &.active {
-            background-color: #ff5400;
+            background-color: $main_color;
           }
         }
       }
-      @media (max-width: 991px) {
+      @include max-breakpoint(screen-md) {
         .filter-title-mobile {
           display: none !important;
         }
@@ -73,14 +75,11 @@
         .filter-title {
           display: none !important;
         }
-        @media (max-width: 767px) {
+        @include max-breakpoint(screen-sm) {
           flex: 0 0 auto;
         }
-        @media (max-width: 400px) {
+        @include max-breakpoint(400px) {
           flex: auto;
-        }
-        @media (max-width: 767px) {
-          flex: 0 0 auto;
         }
         .control {
           flex: 1;
@@ -90,13 +89,13 @@
     .collection-section {
       .products {
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        @media (max-width: 1200px) {
+        @include max-breakpoint(screen-lg) {
           grid-template-columns: repeat(3, minmax(0, 1fr));
         }
-        @media (max-width: 991px) {
+        @include max-breakpoint(screen-md) {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
-        @media (max-width: 767px) {
+        @include max-breakpoint(screen-sm) {
           grid-template-columns: repeat(1, minmax(0, 1fr));
         }
       }
@@ -122,7 +121,7 @@
       }
       &:not(.filter-small-media) {
         .filter-collapse {
-          @media (min-width: 992px) {
+          @include min-breakpoint(screen-md) {
             height: auto !important;
           }
           .input-checkbox {
@@ -140,7 +139,7 @@
                   position: absolute;
                   width: 9px;
                   height: 9px;
-                  background-color: #ff5400;
+                  background-color: $main_color;
                   opacity: 0;
                   @include border-radius(100%);
                 }
@@ -160,7 +159,7 @@
         .filter-collapse {
           padding: 0 15px;
           @include transition(0.5s);
-          @media (min-width: 992px) {
+          @include min-breakpoint(screen-md) {
             height: auto !important;
           }
           .input-checkbox {
@@ -178,7 +177,7 @@
                   position: absolute;
                   width: 9px;
                   height: 9px;
-                  background-color: #ff5400;
+                  background-color: $main_color;
                   opacity: 0;
                   @include border-radius(100%);
                 }
@@ -212,7 +211,7 @@
         }
       }
       &.filter-small-media {
-        @media (max-width: 991px) {
+        @include max-breakpoint(screen-md) {
           position: fixed;
           left: 0;
           width: 400px;
@@ -268,17 +267,17 @@
             @include transform(translateX(0));
           }
         }
-        @media (min-width: 992px) {
+        @include min-breakpoint(screen-md) {
           display: none;
         }
         .headerFilter {
-          @media (max-width: 991px) {
-            background-color: #ff5400;
+          @include max-breakpoint(screen-md) {
+            background-color: $main_color;
           }
         }
       }
       &:not(.filter-small-media) {
-        @media (max-width: 991px) {
+        @include max-breakpoint(screen-md) {
           display: none;
         }
       }
