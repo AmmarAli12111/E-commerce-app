@@ -54,7 +54,7 @@ module.exports = (env, argv) => {
               options: { publicPath: "" },
             },
             "css-loader",
-            // according to the docs, sass-loader should be at the bottom, which
+            // according to tzhe docs, sass-loader should be at the bottom, which
             // loads it first to avoid prefixes in your sourcemaps and other issues.
             "sass-loader",
           ],
