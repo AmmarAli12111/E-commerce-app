@@ -1,7 +1,7 @@
 import React from "react";
-import image from "../../../assets/images/icons8-money-50.png";
-import image1 from "../../../assets/images/icons8-discount-50.png";
-import image2 from "../../../assets/images/icons8-support-50.png";
+import image from "../../../assets/images/icons8-money-50.webp";
+import image1 from "../../../assets/images/icons8-discount-50.webp";
+import image2 from "../../../assets/images/icons8-support-50.webp";
 import "./Services.scss";
 
 function Services() {
