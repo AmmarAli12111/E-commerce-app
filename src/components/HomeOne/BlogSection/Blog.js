@@ -1,6 +1,6 @@
 import React from "react";
 import image from "../../../assets/images/wallpaperflare.com_wallpaper (1).webp";
-import "./Blog.css";
+import "./_Blog.scss";
 import { Link } from "react-router-dom";
 import { VscCalendar } from "react-icons/vsc";
 import { BiCommentDots } from "react-icons/bi";

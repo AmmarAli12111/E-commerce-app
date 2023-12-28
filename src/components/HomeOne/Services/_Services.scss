@@ -1,0 +1,9 @@
+.services {
+  color: #fff;
+  img {
+    filter: invert(38%) sepia(33%) saturate(6051%) hue-rotate(2deg)
+      brightness(104%) contrast(104%);
+    -webkit-filter: invert(38%) sepia(33%) saturate(6051%) hue-rotate(2deg)
+      brightness(104%) contrast(104%);
+  }
+}

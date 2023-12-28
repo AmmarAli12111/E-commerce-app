@@ -1,5 +1,5 @@
 import React from "react";
-import "./WishList.scss";
+import "./_WishList.scss";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 

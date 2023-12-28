@@ -1,4 +1,4 @@
-.nav-mobile .nav-item {
+.nav-mobile {
   @media (min-width: 1101px) {
     display: none;
   }
@@ -6,9 +6,6 @@
     position: static !important;
     display: block !important;
     margin: 0 !important;
-    a {
-      padding: 12px 40px;
-    }
     .dropdown {
       top: 100px;
       left: 0 !important;
@@ -23,14 +20,12 @@
       opacity: 1;
       backdrop-filter: none;
       &::before,
-      ::after {
+      &::after {
         content: none;
       }
-      li {
-        a {
-          padding: 12px 40px !important;
-        }
-      }
+    }
+    a {
+      padding: 12px 40px !important;
     }
   }
   .navigation {

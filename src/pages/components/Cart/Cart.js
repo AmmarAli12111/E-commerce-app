@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./Cart.scss";
+import "./_Cart.scss";
 import { useSelector } from "react-redux";
 import EmptyCart from "./EmptyCart/EmptyCart";
 import { Link } from "react-router-dom";

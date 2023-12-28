@@ -1,0 +1,239 @@
+// import mixins
+
+@use "../../../scss/helpers/mixins" as *;
+
+.featured-section {
+  padding: 100px 0;
+  .container-xl {
+    overflow: hidden;
+    z-index: 2;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    top: 200px;
+    left: 150px;
+    @include box-shadow(100px 100px 400px 150px #ff5400);
+    @include border-radius(50%);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    bottom: 300px;
+    right: 350px;
+    @include box-shadow(100px 100px 400px 150px #ff5400);
+    @include border-radius(50%);
+  }
+  .title-content {
+    color: #fff;
+    > a {
+      width: 150px;
+      max-width: 100%;
+      background-color: #ff5400;
+      border: 1px solid transparent;
+      @include transition(0.5s);
+      &:hover {
+        background: rgb(0, 0, 0, 0.1);
+        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
+        border: 1px solid #6c6a6a !important;
+        @include box-shadow(10px 10px 20px rgba(0, 0, 0, 0.2));
+      }
+      @media (max-width: 576px) {
+        margin-top: 10px;
+      }
+    }
+    strong {
+      position: relative;
+      @media screen and (max-width: 650px) {
+        font-size: 30px;
+      }
+      @media screen and (max-width: 350px) {
+        width: 100%;
+        text-align: start;
+      }
+    }
+  }
+  .wrapper {
+    .block-content {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: calc((100% / 3) - 12px);
+      gap: 18px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      cursor: auto;
+      &.no-transition {
+        scroll-behavior: smooth;
+      }
+      &.dragging {
+        scroll-behavior: smooth;
+        .product-item {
+          cursor: grab;
+        }
+      }
+      .product-item {
+        user-select: none;
+        cursor: default;
+        overflow: hidden;
+        background: rgb(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        scroll-snap-align: start;
+        text-align: start;
+        color: #fff;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+        .product-image {
+          overflow: hidden;
+          user-select: none;
+          img {
+            object-fit: cover;
+            @include transition(0.5s);
+          }
+        }
+        .product-info {
+          .description-product {
+            font-size: 14px;
+            color: #a3a7aa;
+          }
+          .description {
+            .rigth-side {
+              .price-product {
+                color: #ff5400;
+              }
+              .reviews {
+                .starts {
+                  svg {
+                    color: #ff5400;
+                    font-size: 14px;
+                  }
+                }
+                .text-reviews {
+                  font-size: 13px;
+                }
+              }
+            }
+            .left-side {
+              .add-to-cart {
+                width: 40px;
+                height: 40px;
+                background-color: #ff5400;
+                border: 1px solid #ff5400;
+                cursor: pointer;
+                @include transition(0.3s);
+                &:hover {
+                  background-color: transparent;
+                  border: 1px solid #6c6a6a;
+                }
+              }
+            }
+          }
+        }
+        .product-hover {
+          top: 10px;
+          right: 10px;
+          button {
+            &:first-of-type {
+              background-color: rgb(0, 0, 0, 0.2);
+              backdrop-filter: blur(15px);
+              color: #fff;
+              border: 1px solid #6c6a6a;
+              width: 35px;
+              height: 35px;
+              outline: none;
+              right: -50px;
+              @include transition(0.4s ease-in-out);
+              &:hover {
+                background-color: #ff5400;
+                border: 1px solid #ff5400;
+              }
+            }
+          }
+        }
+        &:hover {
+          .product-hover {
+            button:first-of-type {
+              opacity: 1 !important;
+              right: 0;
+            }
+          }
+        }
+        &:hover .product-image img {
+          filter: brightness(0.4);
+          -webkit-filter: brightness(0.4);
+        }
+      }
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      @media screen and (max-width: 992px) {
+        grid-auto-columns: calc((100% / 2) - 9px);
+      }
+      @media screen and (max-width: 768px) {
+        grid-auto-columns: 100%;
+      }
+    }
+    .arrow-back,
+    .arrow-forward {
+      background-color: #ff5400;
+      border: 1px solid #ff5400;
+      width: 45px;
+      height: 45px;
+      cursor: pointer;
+      z-index: 3;
+      visibility: hidden;
+      @include transform(translateY(-50%) scale(0));
+      @include transition(0.5s);
+      &::before {
+        content: "";
+        position: absolute;
+        width: 35%;
+        height: 2px;
+        background-color: #fff;
+        @include transform(translateY(5px) rotate(-45deg));
+        @include border-radius(5px);
+      }
+      &::before {
+        @include transform(translateY(5px) rotate(45deg));
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 35%;
+        height: 2px;
+        background-color: #fff;
+        @include transform(translateY(-5px) rotate(45deg));
+        @include border-radius(5px);
+      }
+      &::after {
+        @include transform(translateY(-5px) rotate(-45deg));
+      }
+      &:hover {
+        background-color: rgb(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid #6c6a6a;
+      }
+    }
+    .arrow-back {
+      left: -10px;
+    }
+    .arrow-forward {
+      right: -10px;
+    }
+    &:hover {
+      .arrow-back,
+      .arrow-forward {
+        opacity: 1 !important;
+        visibility: visible;
+        @include transform(translateY(-50%) scale(1));
+      }
+    }
+  }
+}

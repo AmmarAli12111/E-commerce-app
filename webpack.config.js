@@ -47,14 +47,12 @@ module.exports = (env, argv) => {
         },
 
         {
-          test: /\.css$/,
+          test: /\.s?css$/,
           use: [
-            {
-              loader: MiniCssExtractPlugin.loader,
-              // This is required for asset imports in CSS, such as url()
-              options: { publicPath: "" },
-            },
-            ,
+            // fallback to style-loader in development
+            process.env.NODE_ENV !== "production"
+              ? "style-loader"
+              : MiniCssExtractPlugin.loader,
             "css-loader",
             "sass-loader",
           ],

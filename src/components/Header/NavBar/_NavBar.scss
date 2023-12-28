@@ -1,6 +1,6 @@
 // import mixins
 
-@use "../../../sass/helpers/mixins" as *;
+@use "../../../scss/helpers/mixins" as *;
 
 .header-section {
   .navigation {
@@ -135,50 +135,15 @@
         overflow: hidden;
         white-space: nowrap;
       }
-      .dropdown {
-        display: none;
-        opacity: 0;
-        z-index: 1;
-        padding: 15px 0 !important;
-        background: linear-gradient(
-          153.32deg,
-          rgba(255, 255, 255, 0.3) -65.62%,
-          rgba(255, 255, 255, 0.1) 83.28%
-        );
-        backdrop-filter: blur(25px);
-        -webkit-backdrop-filter: blur(25px);
-        @include box-shadow(0px 4px 24px -1px rgba(0, 0, 0, 0.2));
-        @include transition(opacity 0.3s ease-in-out);
-        &::before {
-          position: absolute;
-          content: "";
-          display: block;
-          width: 100%;
-          height: 80px;
-          left: 0;
-          top: -12px;
-          z-index: -3;
-        }
-        &::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          background: #161829;
-          opacity: 0.2;
-          width: 100%;
-          height: 100%;
-          z-index: -2;
-          @include border-box(10px);
-        }
-        li {
-          width: 100%;
-          a {
-            padding: 8px 40px;
-            padding-right: 50px;
-          }
+
+      li {
+        width: 100%;
+        a {
+          padding: 8px 40px;
+          padding-right: 50px;
         }
       }
+
       &:has(> .close-icon) {
         @media (max-width: 1101px) {
           display: none;
@@ -189,7 +154,7 @@
   &.head-fixed {
     .navigation {
       &::before,
-      ::after {
+      &::after {
         @media (min-width: 1101px) {
           display: none !important;
         }
@@ -225,4 +190,19 @@
       }
     }
   }
+}
+.dropdown {
+  display: none;
+  opacity: 0;
+  z-index: 1;
+  padding: 15px 0 !important;
+  background: linear-gradient(
+    153.32deg,
+    rgba(255, 255, 255, 0.3) -65.62%,
+    rgba(255, 255, 255, 0.1) 83.28%
+  );
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  @include box-shadow(0px 4px 24px -1px rgba(0, 0, 0, 0.2));
+  @include transition(opacity 0.3s ease-in-out);
 }

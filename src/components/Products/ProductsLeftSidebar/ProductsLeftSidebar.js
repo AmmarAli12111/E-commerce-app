@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "../Products.css";
+import "../_Products.scss";
 import Sidebar from "../ProductsLeftSidebar/Sidebar";
 import Products from "./Products";
 import Control from "./Control";

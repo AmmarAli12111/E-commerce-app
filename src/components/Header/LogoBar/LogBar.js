@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import "./LogoBar.scss";
+import "./_LogoBar.scss";
 import NavBar from "../NavBar/NavBar";
 import { Link } from "react-router-dom";
 import NavMobile from "../NavMobile/NavMobile";

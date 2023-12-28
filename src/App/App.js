@@ -43,7 +43,7 @@ import { BiSearchAlt, BiChevronDown, BiCurrentLocation } from "react-icons/bi";
 import IndexOne from "../components/HomeOne/index";
 import CommonBanner from "../components/CommonBanner/CommonBanner";
 import WishList from "../pages/components/WishList/WishList";
-import ProductDetails from "../components/ProductDetails/ProductDetails";
+import ProductDetails from "../components/Product/ProductDetails/ProductDetails";
 import MiniCart from "../pages/components/Cart/MiniCart/MiniCart";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";

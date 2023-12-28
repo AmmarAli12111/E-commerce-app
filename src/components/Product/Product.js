@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./Product.css";
+import "./_Product.scss";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";

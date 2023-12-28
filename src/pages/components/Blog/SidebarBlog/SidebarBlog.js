@@ -1,5 +1,5 @@
 import React from "react";
-import "./SidebarBlog.scss";
+import "./_SidebarBlog.scss";
 
 function SideBarBlog(props) {
   const getCoordinates = (e) => {

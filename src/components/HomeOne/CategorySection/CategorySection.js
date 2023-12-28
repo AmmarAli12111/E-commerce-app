@@ -1,5 +1,5 @@
 import React from "react";
-import "./CategorySection.css";
+import "./_CategorySection.scss";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 

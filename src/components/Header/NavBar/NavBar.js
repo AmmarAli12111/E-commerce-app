@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./NavBar.scss";
+import "./_NavBar.scss";
 import { dropdownLinks } from "./dorpdownLinks";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";

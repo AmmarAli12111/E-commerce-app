@@ -1,5 +1,5 @@
 import React from "react";
-import "./BlogSection.scss";
+import "./_BlogSection.scss";
 import SideBarBlog from "./SidebarBlog/SidebarBlog";
 import { BlogItem } from "../../../components/HomeOne/BlogSection/Blog";
 import { useLocation } from "react-router";

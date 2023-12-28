@@ -1,5 +1,5 @@
 import React from "react";
-import "./LandingSection.css";
+import "./_LandingSection.scss";
 import image1 from "../../../assets/images/wallpaperflare.com_wallpaper (7).webp";
 import image from "../../../assets/images/wallpaperflare.com_wallpaper (12).webp";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -49,7 +49,7 @@ function LandingSection(props) {
       modules={[Navigation, Parallax, EffectFade, Autoplay, Pagination]}
     >
       <SwiperSlide className="swiper-slide">
-        <div className="image">
+        <div className="wrapper">
           <img
             src={image}
             alt="Slider Image"
@@ -96,7 +96,7 @@ function LandingSection(props) {
         </div>
       </SwiperSlide>
       <SwiperSlide className="swiper-slide">
-        <div className="image ">
+        <div className="wrapper ">
           <img
             src={image1}
             alt="Slider Image"
