@@ -7,8 +7,10 @@ import { BiSolidLeftArrowAlt } from "react-icons/bi";
 import { FiSearch } from "react-icons/fi";
 
 function Navigation(props) {
-  const navigation = document.querySelector(".navigation");
   const openSearchInput = () => {
+    const navigation = document.querySelector(
+      ".navigation:not(.nav-mobile .navigation)"
+    );
     navigation.classList.add("openSearch");
     document
       .querySelector(".navigation:not(.nav-mobile .navigation) .search-input")
@@ -16,6 +18,9 @@ function Navigation(props) {
   };
 
   const handleClickCloseIcon = () => {
+    const navigation = document.querySelector(
+      ".navigation:not(.nav-mobile .navigation)"
+    );
     navigation.classList.remove("openSearch");
   };
 
